@@ -1,14 +1,19 @@
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 local GUI = Mercury:Create{
-    Name = "Mercy Hub",
+    Name = "Waterfall Hub",
     Size = UDim2.fromOffset(600, 400),
-    Theme = Mercury.Themes.Dark,
+    Theme = Mercury.Themes.Serika,
     Link = "https://github.com/deeeity/mercury-lib"
 }
 
 local Tab = GUI:Tab{
         Name = "Universal",
         Icon = "rbxassetid://8569322835"
+}
+
+Tab:Textbox{
+	Name = "Universal",
+	Callback = function(text) end
 }
 
 Tab:Button{
@@ -79,10 +84,17 @@ Tab:Textbox{
 }
 
 Tab:Button{
-        Name = "Sense ESP On",
+        Name = "Sense ESP",
         Description = nil,
         Callback = function() 
 
+GUI:Prompt{
+	Followup = false,
+	Title = "Sense Esp",
+	Text = "Find Everyone",
+	Buttons = {
+		ON = function()
+			
 -- 1. Load the library
 local Sense = loadstring(game:HttpGet('https://sirius.menu/sense'))()
 
@@ -205,15 +217,15 @@ Sense = {
   }
 }
 
-end
-}
-
-Tab:Button{
-        Name = "Sense ESP Off",
-        Description = nil,
-        Callback = function() 
-
+		end,
+		OFF = function()
+			
 Sense.Unload()
+
+
+		end
+	}
+}
 
 end
 }
