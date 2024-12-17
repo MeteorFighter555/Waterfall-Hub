@@ -1,2 +1,2 @@
 # Waterfall-Hub
-My Roblox Script Hub that I made for fun
+Roblox Scripting Hub that only have quality and rare scripts
