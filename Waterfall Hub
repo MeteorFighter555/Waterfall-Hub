@@ -219,7 +219,9 @@ Sense = {
 
 		end,
 		OFF = function()
-			
+		
+-- 1. Load the library
+local Sense = loadstring(game:HttpGet('https://sirius.menu/sense'))()	
 Sense.Unload()
 
 
