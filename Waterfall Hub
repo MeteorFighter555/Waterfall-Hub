@@ -319,6 +319,9 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end)))
 end)                
 
+end
+}
+
 Tab:Button{
 	Name = "Infinite Yield",
 	Description = nil,
