@@ -97,13 +97,7 @@ Tab:Button{
         Description = nil,
         Callback = function() 
 
-GUI:Prompt{
-	Followup = false,
-	Title = "Sense Esp",
-	Text = "Find Everyone",
-	Buttons = {
-		ON = function()
-	-- Preview: https://cdn.discordapp.com/attachments/796378086446333984/818089455897542687/unknown.png
+        -- Preview: https://cdn.discordapp.com/attachments/796378086446333984/818089455897542687/unknown.png
 -- Made by Blissful#4992
 local Settings = {
     Box_Color = Color3.fromRGB(255, 0, 0),
@@ -291,49 +285,39 @@ local LineProperties = {}
 LineProperties.To = tov2
 LineProperties.from = fromv2
 game:GetService('RunService').RenderStepped:Connect(function()
-	local tracer = script.Parent
+        local tracer = script.Parent
 
-	local Vector, OnScreen = cam:WorldToViewportPoint(workspace:WaitForChild('viewcheck').Position)
+        local Vector, OnScreen = cam:WorldToViewportPoint(workspace:WaitForChild('viewcheck').Position)
 
-	-- tracer.From = Vector2.new(cam.ViewportSize.X / 2, cam.ViewportSize.Y / 2)
-	
-	coroutine.resume(coroutine.create((function()
-		local To = Vector2.new(Vector.X, Vector.Y)
-		local Direction = (To - LineProperties.From);
-		local Center = (To + LineProperties.From) / 2
-		local Distance = Direction.Magnitude
-		local Theta = math.atan2(Direction.Y, Direction.X);
+        -- tracer.From = Vector2.new(cam.ViewportSize.X / 2, cam.ViewportSize.Y / 2)
 
-		tracer.Position = UDim2.fromOffset(Center.X, Center.Y);
-		tracer.Rotation = math.deg(Theta);
-		tracer.Size = UDim2.fromOffset(Distance, 1);
+        coroutine.resume(coroutine.create((function()
+                local To = Vector2.new(Vector.X, Vector.Y)
+                local Direction = (To - LineProperties.From);
+                local Center = (To + LineProperties.From) / 2
+                local Distance = Direction.Magnitude
+                local Theta = math.atan2(Direction.Y, Direction.X);
 
-		LineProperties.To = To
-	end)))
-	coroutine.resume(coroutine.create((function()
-		local From = Vector2.new(cam.ViewportSize.X / 2, cam.ViewportSize.Y / 2)
-		local Direction = (LineProperties.To - From);
-		local Center = (LineProperties.To + From) / 2
-		local Distance = Direction.Magnitude
-		local Theta = math.atan2(Direction.Y, Direction.X);
+                tracer.Position = UDim2.fromOffset(Center.X, Center.Y);
+                tracer.Rotation = math.deg(Theta);
+                tracer.Size = UDim2.fromOffset(Distance, 1);
 
-		tracer.Position = UDim2.fromOffset(Center.X, Center.Y);
-		tracer.Rotation = math.deg(Theta);
-		tracer.Size = UDim2.fromOffset(Distance, 1);
+                LineProperties.To = To
+        end)))
+        coroutine.resume(coroutine.create((function()
+                local From = Vector2.new(cam.ViewportSize.X / 2, cam.ViewportSize.Y / 2)
+                local Direction = (LineProperties.To - From);
+                local Center = (LineProperties.To + From) / 2
+                local Distance = Direction.Magnitude
+                local Theta = math.atan2(Direction.Y, Direction.X);
 
-		LineProperties.From = From
-	end)))
-end)		
+                tracer.Position = UDim2.fromOffset(Center.X, Center.Y);
+                tracer.Rotation = math.deg(Theta);
+                tracer.Size = UDim2.fromOffset(Distance, 1);
 
-		end,
-		OFF = function()
-		
-
-
-
-		end
-	}
-}
+                LineProperties.From = From
+        end)))
+end)                
 
 end
 }
