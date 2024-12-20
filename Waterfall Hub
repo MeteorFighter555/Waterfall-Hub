@@ -329,6 +329,16 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 end
 }
 
+Tab:Button{
+	Name = "Aimbot",
+	Description = nil,
+	Callback = function() 
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Universal-Aimbot-23560"))()
+
+end
+}
+
 
 end
 }
