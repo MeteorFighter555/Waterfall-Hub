@@ -319,5 +319,16 @@ game:GetService('RunService').RenderStepped:Connect(function()
         end)))
 end)                
 
+Tab:Button{
+	Name = "Infinite Yield",
+	Description = nil,
+	Callback = function() 
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+end
+}
+
+
 end
 }
