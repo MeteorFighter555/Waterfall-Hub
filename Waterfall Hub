@@ -453,7 +453,6 @@ Tab:Button{
 	Description = nil,
 	Callback = function() 
 
-Shader -
 loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
 
 end
