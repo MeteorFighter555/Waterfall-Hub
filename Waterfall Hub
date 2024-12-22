@@ -341,3 +341,91 @@ loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Universal-A
 
 end
 }
+
+local Tab = GUI:Tab{
+	Name = "Strongest Battlegrounds",
+	Icon = "rbxassetid://8569322835"
+}
+
+Tab:Button{
+	Name = "Gojo Satoru",
+	Description = nil,
+	Callback = function() 
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToSorcerer/main/Latest.lua"))()
+
+end
+}
+
+Tab:Button{
+	Name = "Toji Fushiguro",
+	Description = nil,
+	Callback = function() 
+
+getgenv().RunTool = true -- useful i guess
+getgenv().TpTool = ture -- kinda useless just tps to closest player
+getgenv().TpTool2 = true -- useful tps u to whatever u click
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S1gmaGuy/Toji_Sigma_Boy/refs/heads/main/100%%20Sigma%20Boy"))()
+
+end
+}
+
+Tab:Button{
+	Name = "Sukuna",
+	Description = nil,
+	Callback = function() 
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zyrask/Nexus-Base/main/atomic-blademaster%20to%20sukuna"))()
+
+end
+}
+
+Tab:Button{
+	Name = "Reaper Moveset",
+	Description = nil,
+	Callback = function() 
+
+getgenv().Music = false
+--Setting this to false usually fixes most executors
+--also it helps load time a little bit
+getgenv().AttackQuality = 'High'
+--Set to Low,High
+
+ getgenv().ConstantSpeed = false
+--if you want your speed to be constant
+--Set to Low,High
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Reapvitalized/TSB/main/APOPHENIA.lua"))()
+
+end
+}
+
+Tab:Button{
+	Name = "Volta",
+	Description = nil,
+	Callback = function() 
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Reapvitalized/TSB/refs/heads/main/VOLTA.lua"))()
+
+end
+}
+
+Tab:Button{
+	Name = "Floating Girl",
+	Description = nil,
+	Callback = function() 
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Reapvitalized/TSB/refs/heads/main/FLOATING_GIRL.lua"))()
+
+end
+}
+
+Tab:Button{
+	Name = "Button",
+	Description = nil,
+	Callback = function() 
+
+
+
+end
+}
