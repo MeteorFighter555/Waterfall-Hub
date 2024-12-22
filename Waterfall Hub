@@ -429,3 +429,33 @@ Tab:Button{
 
 end
 }
+
+local Tab = GUI:Tab{
+	Name = "Shaders",
+	Icon = "rbxassetid://8569322835"
+}
+
+Tab:Button{
+	Name = "Pshade Ultimate",
+	Description = nil,
+	Callback = function() 
+
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/randomstring0/pshade-ultimate/refs/heads/main/src/cd.lua'))()
+--pshade ultimate--
+            
+
+end
+}
+
+Tab:Button{
+	Name = "Rtx Shaders",
+	Description = nil,
+	Callback = function() 
+
+Shader -
+loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
+
+end
+}
+
