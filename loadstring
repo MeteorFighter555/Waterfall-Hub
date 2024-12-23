@@ -5,3 +5,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Wate
 --with toggle
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Waterfall-Hub.lua",true))()
+
+--with key
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Waterfall-Hub.lua",true))()
