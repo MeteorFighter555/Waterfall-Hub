@@ -1,40 +1,25 @@
-The Gui Maker
-Waterfalltoggle.MouseButton1Down:connect(function()
-local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
-local GUI = Mercury:Create{
-    Name = "Waterfall Hub",
-    Size = UDim2.fromOffset(600, 400),
-    Theme = Mercury.Themes.Serika,
-    Link = "https://github.com/deeeity/mercury-lib"
-}
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Tab = GUI:Tab{
-        Name = "Universal",
-        Icon = "rbxassetid://8569322835"
-}
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
 
-Tab:Textbox{
-        Name = "Universal",
-        Callback = function(text) end
-}
-
-Tab:Button{
-        Name = "Infinite Jump",
-        Description = nil,
-        Callback = function() 
-
-local InfiniteJumpEnabled = true
-game:GetService("UserInputService").JumpRequest:connect(function()
-        if InfiniteJumpEnabled then
-                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-        end
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "WaterfallToggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+Toggle.Size = UDim2.new(0, 90, 0, 38)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "Toggle UI"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 28.000
+Toggle.Draggable = true
+Toggle.MouseButton1Click:connect(function()
+    script
 end)
 
-end
-}
-end)
- 
-frame = script.Parent.{FrameName} -- Take out {}s, and put name of frame
-frame.Draggable = true
-frame.Active = true
-frame.Selectable = true
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
