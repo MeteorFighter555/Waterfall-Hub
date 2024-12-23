@@ -347,6 +347,12 @@ local Tab = GUI:Tab{
         Icon = "rbxassetid://8569322835"
 }
 
+Tab:Textbox{
+	Name = "Custom Movesets",
+	Callback = function(text) end
+}
+
+
 Tab:Button{
         Name = "Gojo Satoru",
         Description = nil,
