@@ -1,1 +1,6 @@
+--Ui only
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Waterfall%20UI.lua",true))()
+
+--with toggle
+
