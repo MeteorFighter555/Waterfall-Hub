@@ -1,6 +1,37 @@
 The Gui Maker
 Waterfalltoggle.MouseButton1Down:connect(function()
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local GUI = Mercury:Create{
+    Name = "Waterfall Hub",
+    Size = UDim2.fromOffset(600, 400),
+    Theme = Mercury.Themes.Serika,
+    Link = "https://github.com/deeeity/mercury-lib"
+}
 
+local Tab = GUI:Tab{
+        Name = "Universal",
+        Icon = "rbxassetid://8569322835"
+}
+
+Tab:Textbox{
+        Name = "Universal",
+        Callback = function(text) end
+}
+
+Tab:Button{
+        Name = "Infinite Jump",
+        Description = nil,
+        Callback = function() 
+
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+        if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+        end
+end)
+
+end
+}
 end)
  
 frame = script.Parent.{FrameName} -- Take out {}s, and put name of frame
