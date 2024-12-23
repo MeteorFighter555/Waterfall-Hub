@@ -22,7 +22,7 @@ local GUI = Mercury:Create{
     Name = "Waterfall Hub",
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Serika,
-    Link = "https://github.com/deeeity/mercury-lib"
+    Link = "https://github.com/MeteorFighter555/Waterfall-Hub"
 }
 
 local Tab = GUI:Tab{
