@@ -23,3 +23,17 @@ end)
 local Corner = Instance.new("UICorner")
 Corner.Name = "Corner"
 Corner.Parent = Toggle
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character or plr.CharacterAdded:Wait()
+local hum = char:WaitForChild("Humanoid")
+
+while wait() do
+	if hum.Health <=0 then
+		script.Parent.Visible = false
+	else
+		script.Parent.Visible = true
+	end
+	
+
+end
