@@ -15,7 +15,7 @@ Toggle.Font = Enum.Font.SourceSans
 Toggle.Text = "Toggle UI"
 Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
 Toggle.TextSize = 28.000
-Toggle.Draggable = true
+Toggle.Draggable = false
 Toggle.MouseButton1Click:connect(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Waterfall%20UI.lua",true))()
 end)
