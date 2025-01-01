@@ -1,28 +1,23 @@
-repeat task.wait(0.25) until game:IsLoaded();
-getgenv().Image = "rbxassetid://7229442422"; -- put a asset id in here to make it work
-getgenv().ToggleUI = "Del" -- This where you can Toggle the Fluent ui library
-
-task.spawn(function()
-    if not getgenv().LoadedMobileUI == true then getgenv().LoadedMobileUI = true
-        local OpenUI = Instance.new("ScreenGui");
-        local ImageButton = Instance.new("ImageButton");
-        local UICorner = Instance.new("UICorner");
-        OpenUI.Name = "OpenUI";
-        OpenUI.Parent = game:GetService("CoreGui");
-        OpenUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
-        ImageButton.Parent = OpenUI;
-        ImageButton.BackgroundColor3 = Color3.fromRGB(105,105,105);
-        ImageButton.BackgroundTransparency = 0.8
-        ImageButton.Position = UDim2.new(0.9,0,0.1,0);
-        ImageButton.Size = UDim2.new(0,50,0,50);
-        ImageButton.Image = getgenv().Image;
-        ImageButton.Draggable = true;
-        ImageButton.Transparency = 1;
-        UICorner.CornerRadius = UDim.new(0,200);
-        UICorner.Parent = ImageButton;
-        ImageButton.MouseButton1Click:Connect(function()
-            game:GetService("VirtualInputManager"):SendKeyEvent(true,getgenv().ToggleUI,false,game);
-        end)
-    end
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+ 
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Wayerfall-Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+Toggle.Size = UDim2.new(0, 90, 0, 38)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "Tutorial"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 28.000
+Toggle.Draggable = true
+Toggle.MouseButton1Click:connect(function()
+    
 end)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Waterfall%20UI.lua",true))()
+ 
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
