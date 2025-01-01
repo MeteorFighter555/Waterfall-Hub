@@ -102,7 +102,7 @@ CheckKey.MouseButton1Click:Connect(function()
         ScreenGui:Destroy()
 
 -- Put Your Script Here
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Waterfall-Hub.lua",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Toggle%20test",true))()
 
     else
         TextBox.PlaceholderText = "Invalid key. Try again."
