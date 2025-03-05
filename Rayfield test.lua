@@ -23,7 +23,7 @@ local Window = ArrayField:CreateWindow({
             FileName = "ArrayFieldsKeys",
             SaveKey = false,
             GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like ArrayField to get the key from
-            Key = {"Hello",'Bye'},
+            Key = {"U2FsdGVkX1+swGe5EB0AmgaTPqccOA7tc7cTnLJ2pEU="},
             Actions = {
                 [1] = {
                     Text = 'No Key link Provided loser',
