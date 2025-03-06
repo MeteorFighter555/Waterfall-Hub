@@ -56,6 +56,6 @@ local UniTab = Window:CreateTab("Universal", "rewind")
 
 local ShaderTab = Window:CreateTab("Shaders", "rewind")
 
-local Tab = Window:CreateTab("Tab Example", "rewind")
+local PlaceholderTab = Window:CreateTab("Tab Example", "rewind")
 
 local Tab = Window:CreateTab("Tab Example", "rewind")
