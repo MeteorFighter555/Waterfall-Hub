@@ -43,8 +43,8 @@ Rayfield:Notify({
 
 local HomeTab = Window:CreateTab("Home", 4483362458) -- Title, Image
 
-local Paragraph = Tab:CreateParagraph({Title = "Welcome to Waterfall Hub", Content = "Thank you for using my private script hub"})
-local Button = Tab:CreateButton({
+local Paragraph = HomeTab:CreateParagraph({Title = "Welcome to Waterfall Hub", Content = "Thank you for using my private script hub"})
+local Button = HomeTab:CreateButton({
    Name = "Destroy Hub",
    Callback = function()
          Rayfield:Destroy()
