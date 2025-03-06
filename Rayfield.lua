@@ -34,11 +34,27 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local Tab = Window:CreateTab("Home", "house")
+Rayfield:Notify({
+   Title = "Welcome User",
+   Content = "Welcome to Waterfall Hub",
+   Duration = 6.5,
+   Image = House,
+})
 
-local Tab = Window:CreateTab("Universal", "rewind")
+local HomeTab = Window:CreateTab("Home", "house")
 
-local Tab = Window:CreateTab("Shaders", "rewind")
+local Paragraph = Tab:CreateParagraph({Title = "Welcome to Waterfall Hub", Content = "Thank you for using this private script hub"})
+
+local Button = Tab:CreateButton({
+   Name = "Destroy",
+   Callback = function()
+   Rayfield:Destroy()
+   end,
+})
+
+local UniTab = Window:CreateTab("Universal", "rewind")
+
+local ShaderTab = Window:CreateTab("Shaders", "rewind")
 
 local Tab = Window:CreateTab("Tab Example", "rewind")
 
