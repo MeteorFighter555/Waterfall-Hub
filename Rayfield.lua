@@ -41,21 +41,4 @@ Rayfield:Notify({
    Image = House,
 })
 
-local HomeTab = Window:CreateTab("Home", "house")
-
-local Paragraph = HomeTab:CreateParagraph({Title = "Welcome to Waterfall Hub", Content = "Thank you for using this private script hub"})
-
-local Button = HomeTab:CreateButton({
-   Name = "Destroy",
-   Callback = function()
-   Rayfield:Destroy()
-   end,
-})
-
-local UniTab = Window:CreateTab("Universal", "rewind")
-
-local ShaderTab = Window:CreateTab("Shaders", "rewind")
-
-local PlaceholderTab = Window:CreateTab("Tab Example", "rewind")
-
-local Tab = Window:CreateTab("Tab Example", "rewind")
+local Tab = Window:CreateTab("Home", "house")
