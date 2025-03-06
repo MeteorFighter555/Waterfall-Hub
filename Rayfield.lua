@@ -41,4 +41,4 @@ Rayfield:Notify({
    Image = House,
 })
 
-local Tab = Window:CreateTab("Home", "house")
+local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
