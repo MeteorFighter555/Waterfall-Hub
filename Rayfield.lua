@@ -34,11 +34,11 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local Tab = Window:CreateTab("Tab Example", "rewind")
+local Tab = Window:CreateTab("Home", "house")
 
-local Tab = Window:CreateTab("Tab Example", "rewind")
+local Tab = Window:CreateTab("Universal", "rewind")
 
-local Tab = Window:CreateTab("Tab Example", "rewind")
+local Tab = Window:CreateTab("Shaders", "rewind")
 
 local Tab = Window:CreateTab("Tab Example", "rewind")
 
