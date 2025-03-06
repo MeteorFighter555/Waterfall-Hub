@@ -270,3 +270,46 @@ local Button = UniTab:CreateButton({
    -- The function that takes place when the button is pressed
    end,
 })
+
+local Button = UniTab:CreateButton({
+   Name = "R6 Fling",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = UniTab:CreateButton({
+   Name = "Mobile Keyboard",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = UniTab:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Label = HomeTab:CreateLabel("Fun Scripts", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Button = UniTab:CreateButton({
+   Name = "Sonic Mode",
+   Callback = function()
+loadstring(game:HttpGetAsync("https://pastebin.com/raw/uacVtsWe"))()
+
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = UniTab:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+loadstring(game:HttpGetAsync("https://pastebin.com/raw/hSqRZPLd"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
