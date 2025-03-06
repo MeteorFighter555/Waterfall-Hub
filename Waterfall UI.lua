@@ -339,7 +339,7 @@ Tab:Textbox{
 }
 
 Tab:Button{
-	Name = "Button",
+	Name = "Skeleton Esp",
 	Description = nil,
 	Callback = function() 
 	
