@@ -56,6 +56,35 @@ local UniTab = Window:CreateTab("Universal", 4483362458) -- Title, Image
 
 local Label = UniTab:CreateLabel("Useful Part", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
+local Slider = UniTab:CreateSlider({
+   Name = "Slider Example",
+   Range = {16, 100},
+   Increment = 1,
+   Suffix = "Speed Value",
+   CurrentValue = 16,
+   Flag = "SpeedSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   -- The function that takes place when the slider changes
+   -- The variable (Value) is a number which correlates to the value the slider is currently at
+   end,
+})
+
+
+local Slider = UniTab:CreateSlider({
+   Name = "Slider Example",
+   Range = {16, 100},
+   Increment = 1,
+   Suffix = "Jump Value",
+   CurrentValue = 16,
+   Flag = "JumpSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+         
+   -- The function that takes place when the slider changes
+   -- The variable (Value) is a number which correlates to the value the slider is currently at
+   end,
+})
+
 local Button = UniTab:CreateButton({
    Name = "Tracker Esp",
    Callback = function()
@@ -311,19 +340,5 @@ local Button = UniTab:CreateButton({
    Callback = function()
 loadstring(game:HttpGetAsync("https://pastebin.com/raw/hSqRZPLd"))()
    -- The function that takes place when the button is pressed
-   end,
-})
-
-local Slider = UniTab:CreateSlider({
-   Name = "Slider Example",
-   Range = {16, 100},
-   Increment = 1,
-   Suffix = "Speed Value",
-   CurrentValue = 16,
-   Flag = "SpeedSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
-   -- The function that takes place when the slider changes
-   -- The variable (Value) is a number which correlates to the value the slider is currently at
    end,
 })
