@@ -73,13 +73,16 @@ local Slider = UniTab:CreateSlider({
 
 local Slider = UniTab:CreateSlider({
    Name = "Slider Example",
-   Range = {16, 100},
+   Range = {50, 200},
    Increment = 1,
    Suffix = "Jump Value",
-   CurrentValue = 16,
+   CurrentValue = 50,
    Flag = "JumpSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-         
+          local plr = game.Players.LocalPlayer
+local char = plr.Character
+ 
+char.Humanoid.JumpPower = (Value)
    -- The function that takes place when the slider changes
    -- The variable (Value) is a number which correlates to the value the slider is currently at
    end,
@@ -134,7 +137,7 @@ _G.FromCenter = true   -- If set to true, the tracers will come from the center 
 _G.FromBottom = false   -- If set to true, the tracers will come from the bottom of your screen.
 
 _G.TracersVisible = true   -- If set to true then the tracers will be visible and vice versa.
-_G.TracerColor = Color3.fromRGB(255, 255, 255)   -- White color for tracers
+_G.TracerColor = Color3.fromRGB(Value)   -- White color for tracers
 _G.TracerThickness = 1   -- The thickness of the tracers.
 _G.TracerTransparency = 0.7   -- The transparency of the tracers.
 
