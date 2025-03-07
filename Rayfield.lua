@@ -295,7 +295,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
    end,
 })
 
-local Label = HomeTab:CreateLabel("Fun Scripts", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local Label = UniTab:CreateLabel("Fun Scripts", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = UniTab:CreateButton({
    Name = "Sonic Mode",
@@ -307,9 +307,23 @@ loadstring(game:HttpGetAsync("https://pastebin.com/raw/uacVtsWe"))()
 })
 
 local Button = UniTab:CreateButton({
-   Name = "Button Example",
+   Name = "Good Cop Bad Cop",
    Callback = function()
 loadstring(game:HttpGetAsync("https://pastebin.com/raw/hSqRZPLd"))()
    -- The function that takes place when the button is pressed
+   end,
+})
+
+local Slider = UniTab:CreateSlider({
+   Name = "Slider Example",
+   Range = {16, 100},
+   Increment = 1,
+   Suffix = "Speed Value",
+   CurrentValue = 16,
+   Flag = "SpeedSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   -- The function that takes place when the slider changes
+   -- The variable (Value) is a number which correlates to the value the slider is currently at
    end,
 })
