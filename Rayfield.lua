@@ -57,7 +57,7 @@ local UniTab = Window:CreateTab("Universal", 4483362458) -- Title, Image
 local Label = UniTab:CreateLabel("Useful Part", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 local Slider = UniTab:CreateSlider({
-   Name = "Slider Example",
+   Name = "Speed Slider",
    Range = {16, 100},
    Increment = 1,
    Suffix = "Speed Value",
@@ -72,7 +72,7 @@ local Slider = UniTab:CreateSlider({
 
 
 local Slider = UniTab:CreateSlider({
-   Name = "Slider Example",
+   Name = "Jump Slider",
    Range = {50, 200},
    Increment = 1,
    Suffix = "Jump Value",
@@ -137,7 +137,7 @@ _G.FromCenter = true   -- If set to true, the tracers will come from the center 
 _G.FromBottom = false   -- If set to true, the tracers will come from the bottom of your screen.
 
 _G.TracersVisible = true   -- If set to true then the tracers will be visible and vice versa.
-_G.TracerColor = Color3.fromRGB(Value)   -- White color for tracers
+_G.TracerColor = Color3.fromRGB(255, 255, 255)   -- White color for tracers
 _G.TracerThickness = 1   -- The thickness of the tracers.
 _G.TracerTransparency = 0.7   -- The transparency of the tracers.
 
