@@ -374,3 +374,15 @@ local Button = TsbTab:CreateButton({
    -- The function that takes place when the button is pressed
    end,
 })
+
+local Button = TsbTab:CreateButton({
+   Name = "Toji Fushiguro",
+   Callback = function()
+         getgenv().RunTool = true -- useful i guess
+         getgenv().TpTool = ture -- kinda useless just tps to closest player
+         getgenv().TpTool2 = true -- useful tps u to whatever u click
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S1gmaGuy/Toji_Sigma_Boy/refs/heads/main/100%%20Sigma%20Boy"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
