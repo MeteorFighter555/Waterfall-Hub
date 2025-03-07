@@ -58,7 +58,7 @@ local Label = UniTab:CreateLabel("Useful Part", 4483362458, Color3.fromRGB(255, 
 
 local Slider = UniTab:CreateSlider({
    Name = "Speed Slider",
-   Range = {16, 100},
+   Range = {16, 200},
    Increment = 1,
    Suffix = "Speed Value",
    CurrentValue = 16,
