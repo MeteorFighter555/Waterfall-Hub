@@ -43,7 +43,7 @@ Rayfield:Notify({
 
 local HomeTab = Window:CreateTab("Home", 4483362458) -- Title, Image
 
-local Label = HomeTab:CreateLabel("Welcome to Waterfall Hub", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local Label = HomeTab:CreateLabel("Welcome to Waterfall Hub", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 local Button = HomeTab:CreateButton({
    Name = "Destroy Hub",
    Callback = function()
@@ -54,7 +54,7 @@ local Button = HomeTab:CreateButton({
 
 local UniTab = Window:CreateTab("Universal", 4483362458) -- Title, Image
 
-local Label = UniTab:CreateLabel("Useful Part", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local Label = UniTab:CreateLabel("Useful Part", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Slider = UniTab:CreateSlider({
    Name = "Speed Slider",
@@ -344,7 +344,7 @@ local Button = UniTab:CreateButton({
    end,
 })
 
-local Label = UniTab:CreateLabel("Fun Scripts", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local Label = UniTab:CreateLabel("Fun Scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = UniTab:CreateButton({
    Name = "Sonic Mode",
@@ -365,7 +365,7 @@ loadstring(game:HttpGetAsync("https://pastebin.com/raw/hSqRZPLd"))()
 
 local TsbTab = Window:CreateTab("Tsb", 4483362458) -- Title, Image
 
-local Label = TsbTab:CreateLabel("Moveset Scripts", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local Label = TsbTab:CreateLabel("Moveset Scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = TsbTab:CreateButton({
    Name = "Gojo Satoru",
