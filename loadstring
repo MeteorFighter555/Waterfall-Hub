@@ -9,3 +9,7 @@ loadstring(game:HttpGet"https://raw.githubusercontent.com/MeteorFighter555/Water
 --with key
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/key%20system",true))()
+
+--rayfield
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/rayfield",true))()
