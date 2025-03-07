@@ -327,6 +327,23 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
    end,
 })
 
+local Button = UniTab:CreateButton({
+   Name = "Pshade Ultimate",
+   Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/randomstring0/pshade-ultimate/refs/heads/main/src/cd.lua'))()
+--pshade ultimate--
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = UniTab:CreateButton({
+   Name = "Rtx Shaders",
+   Callback = function()
+         loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
 local Label = UniTab:CreateLabel("Fun Scripts", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = UniTab:CreateButton({
@@ -342,6 +359,18 @@ local Button = UniTab:CreateButton({
    Name = "Good Cop Bad Cop",
    Callback = function()
 loadstring(game:HttpGetAsync("https://pastebin.com/raw/hSqRZPLd"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local TsbTab = Window:CreateTab("Tsb", 4483362458) -- Title, Image
+
+local Label = TsbTab:CreateLabel("Moveset Scripts", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Button = TsbTab:CreateButton({
+   Name = "Gojo Satoru",
+   Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToSorcerer/main/Latest.lua"))()
    -- The function that takes place when the button is pressed
    end,
 })
