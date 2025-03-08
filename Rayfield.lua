@@ -88,205 +88,146 @@ char.Humanoid.JumpPower = (Value)
    end,
 })
 
-local ColorPicker = Tab:CreateColorPicker({
+local ColorPicker = UniTab:CreateColorPicker({
     Name = "Color Picker",
     Color = Color3.fromRGB(255,255,255),
-    Flag = "ColorPicker1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Flag = "ColorPicker1",
     Callback = function(Color)
-        -- The function that takes place every time the color picker is moved/changed
-        -- The variable (Value) is a Color3fromRGB value based on which color is selected
+        _G.TracerColor = Color -- Update tracer color dynamically
     end
 })
 
 local Button = UniTab:CreateButton({
    Name = "Tracker Esp",
    Callback = function()
- -- Define a global variable to track the state of the tracers
-if _G.TracersEnabled == nil then
-    _G.TracersEnabled = false
-end
+       -- Define a global variable to track the state of the tracers
+       if _G.TracersEnabled == nil then
+           _G.TracersEnabled = false
+       end
 
-local function API_Check()
-    if Drawing == nil then
-        return "No"
-    else
-        return "Yes"
-    end
-end
+       local function API_Check()
+           if Drawing == nil then
+               return "No"
+           else
+               return "Yes"
+           end
+       end
 
-local Find_Required = API_Check()
+       local Find_Required = API_Check()
 
-if Find_Required == "No" then
-    game:GetService("StarterGui"):SetCore("SendNotification",{
-        Title = "Meteorfighter";
-        Text = "Tracer script could not be loaded because your exploit is unsupported.";
-        Duration = math.huge;
-        Button1 = "OK"
-    })
+       if Find_Required == "No" then
+           game:GetService("StarterGui"):SetCore("SendNotification", {
+               Title = "Meteorfighter";
+               Text = "Tracer script could not be loaded because your exploit is unsupported.";
+               Duration = math.huge;
+               Button1 = "OK"
+           })
+           return
+       end
 
-    return
-end
+       local RunService = game:GetService("RunService")
+       local Players = game:GetService("Players")
+       local Camera = game:GetService("Workspace").CurrentCamera
+       local UserInputService = game:GetService("UserInputService")
 
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
-local Camera = game:GetService("Workspace").CurrentCamera
-local UserInputService = game:GetService("UserInputService")
-local TestService = game:GetService("TestService")
+       _G.SendNotifications = true
+       _G.DefaultSettings = false
+       _G.TeamCheck = false
+       _G.FromMouse = false
+       _G.FromCenter = true
+       _G.FromBottom = false
+       _G.TracersVisible = true
+       _G.TracerColor = Color3.fromRGB(255, 255, 255) -- Default color (White)
+       _G.TracerThickness = 1
+       _G.TracerTransparency = 0.7
+       _G.ModeSkipKey = Enum.KeyCode.E
+       _G.DisableKey = Enum.KeyCode.Q
 
-local Typing = false
+       -- Table to store all tracer lines
+       local TracerLines = {}
 
-_G.SendNotifications = true   -- If set to true then the script would notify you frequently on any changes applied and when loaded / errored. (If a game can detect this, it is recommended to set it to false)
-_G.DefaultSettings = false   -- If set to true then the tracer script would run with default settings regardless of any changes you made.
+       local function CreateTracers()
+           for _, v in next, Players:GetPlayers() do
+               if v.Name ~= game.Players.LocalPlayer.Name then
+                   local TracerLine = Drawing.new("Line")
+                   table.insert(TracerLines, TracerLine)
 
-_G.TeamCheck = false   -- If set to true then the script would create tracers only for the enemy team members.
+                   RunService.RenderStepped:Connect(function()
+                       if workspace:FindFirstChild(v.Name) and workspace[v.Name]:FindFirstChild("HumanoidRootPart") then
+                           local HumanoidRootPart_Position = workspace[v.Name].HumanoidRootPart.CFrame.Position
+                           local Vector, OnScreen = Camera:WorldToViewportPoint(HumanoidRootPart_Position)
 
---[!]-- ONLY ONE OF THESE VALUES SHOULD BE SET TO TRUE TO NOT ERROR THE SCRIPT --[!]--
+                           -- Update tracer properties
+                           TracerLine.Thickness = _G.TracerThickness
+                           TracerLine.Transparency = _G.TracerTransparency
+                           TracerLine.Color = _G.TracerColor -- **Dynamic color update**
 
-_G.FromMouse = false   -- If set to true, the tracers will come from the position of your mouse curson on your screen.
-_G.FromCenter = true   -- If set to true, the tracers will come from the center of your screen.
-_G.FromBottom = false   -- If set to true, the tracers will come from the bottom of your screen.
+                           if _G.FromMouse then
+                               TracerLine.From = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
+                           elseif _G.FromCenter then
+                               TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+                           elseif _G.FromBottom then
+                               TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y)
+                           end
 
-_G.TracersVisible = true   -- If set to true then the tracers will be visible and vice versa.
-_G.TracerColor = Color3.fromRGB(255, 255, 255)   -- White color for tracers
-_G.TracerThickness = 1   -- The thickness of the tracers.
-_G.TracerTransparency = 0.7   -- The transparency of the tracers.
+                           if OnScreen then
+                               TracerLine.To = Vector2.new(Vector.X, Vector.Y)
+                               if _G.TeamCheck then
+                                   if Players.LocalPlayer.Team ~= v.Team then
+                                       TracerLine.Visible = _G.TracersVisible and _G.TracersEnabled
+                                   else
+                                       TracerLine.Visible = false
+                                   end
+                               else
+                                   TracerLine.Visible = _G.TracersVisible and _G.TracersEnabled
+                               end
+                           else
+                               TracerLine.Visible = false
+                           end
+                       else
+                           TracerLine.Visible = false
+                       end
+                   end)
 
-_G.ModeSkipKey = Enum.KeyCode.E   -- The key that changes between modes that indicate where will the tracers come from.
-_G.DisableKey = Enum.KeyCode.Q   -- The key that disables / enables the tracers.
+                   Players.PlayerRemoving:Connect(function()
+                       TracerLine.Visible = false
+                   end)
+               end
+           end
+       end
 
--- Table to store all tracer lines
-local TracerLines = {}
+       local function ClearTracers()
+           for _, TracerLine in pairs(TracerLines) do
+               TracerLine:Remove()
+           end
+           TracerLines = {}
+       end
 
-local function CreateTracers()
-    for _, v in next, Players:GetPlayers() do
-        if v.Name ~= game.Players.LocalPlayer.Name then
-            local TracerLine = Drawing.new("Line")
-            table.insert(TracerLines, TracerLine)  -- Store the tracer line for later removal
-    
-            RunService.RenderStepped:Connect(function()
-                if workspace:FindFirstChild(v.Name) ~= nil and workspace[v.Name]:FindFirstChild("HumanoidRootPart") ~= nil then
-                    local HumanoidRootPart_Position, HumanoidRootPart_Size = workspace[v.Name].HumanoidRootPart.CFrame, workspace[v.Name].HumanoidRootPart.Size * 1
-                    local Vector, OnScreen = Camera:WorldToViewportPoint(HumanoidRootPart_Position * CFrame.new(0, -HumanoidRootPart_Size.Y, 0).p)
-                    
-                    TracerLine.Thickness = _G.TracerThickness
-                    TracerLine.Transparency = _G.TracerTransparency
-                    TracerLine.Color = _G.TracerColor
-
-                    if _G.FromMouse == true and _G.FromCenter == false and _G.FromBottom == false then
-                        TracerLine.From = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
-                    elseif _G.FromMouse == false and _G.FromCenter == true and _G.FromBottom == false then
-                        TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)  -- Center of the screen
-                    elseif _G.FromMouse == false and _G.FromCenter == false and _G.FromBottom == true then
-                        TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y)
-                    end
-
-                    if OnScreen == true  then
-                        TracerLine.To = Vector2.new(Vector.X, Vector.Y)
-                        if _G.TeamCheck == true then 
-                            if Players.LocalPlayer.Team ~= v.Team then
-                                TracerLine.Visible = _G.TracersVisible and _G.TracersEnabled
-                            else
-                                TracerLine.Visible = false
-                            end
-                        else
-                            TracerLine.Visible = _G.TracersVisible and _G.TracersEnabled
-                        end
-                    else
-                        TracerLine.Visible = false
-                    end
-                else
-                    TracerLine.Visible = false
-                end
-            end)
-
-            Players.PlayerRemoving:Connect(function()
-                TracerLine.Visible = false
-            end)
-        end
-    end
-
-    Players.PlayerAdded:Connect(function(Player)
-        Player.CharacterAdded:Connect(function(v)
-            if v.Name ~= game.Players.LocalPlayer.Name then
-                local TracerLine = Drawing.new("Line")
-                table.insert(TracerLines, TracerLine)  -- Store the tracer line for later removal
-        
-                RunService.RenderStepped:Connect(function()
-                    if workspace:FindFirstChild(v.Name) ~= nil and workspace[v.Name]:FindFirstChild("HumanoidRootPart") ~= nil then
-                        local HumanoidRootPart_Position, HumanoidRootPart_Size = workspace[v.Name].HumanoidRootPart.CFrame, workspace[v.Name].HumanoidRootPart.Size * 1
-                    	local Vector, OnScreen = Camera:WorldToViewportPoint(HumanoidRootPart_Position * CFrame.new(0, -HumanoidRootPart_Size.Y, 0).p)
-                        
-                        TracerLine.Thickness = _G.TracerThickness
-                        TracerLine.Transparency = _G.TracerTransparency
-                        TracerLine.Color = _G.TracerColor
-
-                        if _G.FromMouse == true and _G.FromCenter == false and _G.FromBottom == false then
-                            TracerLine.From = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
-                        elseif _G.FromMouse == false and _G.FromCenter == true and _G.FromBottom == false then
-                            TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)  -- Center of the screen
-                        elseif _G.FromMouse == false and _G.FromCenter == false and _G.FromBottom == true then
-                            TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y)
-                        end
-
-                        if OnScreen == true  then
-                            TracerLine.To = Vector2.new(Vector.X, Vector.Y)
-                            if _G.TeamCheck == true then 
-                                if Players.LocalPlayer.Team ~= Player.Team then
-                                    TracerLine.Visible = _G.TracersVisible and _G.TracersEnabled
-                                else
-                                    TracerLine.Visible = false
-                                end
-                            else
-                                TracerLine.Visible = _G.TracersVisible and _G.TracersEnabled
-                            end
-                        else
-                            TracerLine.Visible = false
-                        end
-                    else
-                        TracerLine.Visible = false
-                    end
-                end)
-
-                Players.PlayerRemoving:Connect(function()
-                    TracerLine.Visible = false
-                end)
-            end
-        end)
-    end)
-end
-
-local function ClearTracers()
-    for _, TracerLine in pairs(TracerLines) do
-        TracerLine:Remove()  -- Remove all tracer lines
-    end
-    TracerLines = {}  -- Clear the table
-end
-
--- Toggle tracers on/off
-if _G.TracersEnabled then
-    ClearTracers()  -- Disable tracers
-    _G.TracersEnabled = false
-    if _G.SendNotifications then
-        game:GetService("StarterGui"):SetCore("SendNotification",{
-            Title = "Meteorfighter";
-            Text = "Tracers have been disabled.";
-            Duration = 5;
-        })
-    end
-else
-    _G.TracersEnabled = true
-    CreateTracers()  -- Enable tracers
-    if _G.SendNotifications then
-        game:GetService("StarterGui"):SetCore("SendNotification",{
-            Title = "Meteorfighter";
-            Text = "Tracers have been enabled.";
-            Duration = 5;
-        })
-    end
-      end
-   -- The function that takes place when the button is pressed
+       -- Toggle tracers on/off
+       if _G.TracersEnabled then
+           ClearTracers()
+           _G.TracersEnabled = false
+           if _G.SendNotifications then
+               game:GetService("StarterGui"):SetCore("SendNotification", {
+                   Title = "Meteorfighter";
+                   Text = "Tracers have been disabled.";
+                   Duration = 5;
+               })
+           end
+       else
+           _G.TracersEnabled = true
+           CreateTracers()
+           if _G.SendNotifications then
+               game:GetService("StarterGui"):SetCore("SendNotification", {
+                   Title = "Meteorfighter";
+                   Text = "Tracers have been enabled.";
+                   Duration = 5;
+               })
+           end
+       end
    end,
 })
+
 
 local Button = UniTab:CreateButton({
    Name = "Click TP Tool",
