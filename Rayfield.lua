@@ -88,6 +88,16 @@ char.Humanoid.JumpPower = (Value)
    end,
 })
 
+local ColorPicker = Tab:CreateColorPicker({
+    Name = "Color Picker",
+    Color = Color3.fromRGB(255,255,255),
+    Flag = "ColorPicker1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Color)
+        -- The function that takes place every time the color picker is moved/changed
+        -- The variable (Value) is a Color3fromRGB value based on which color is selected
+    end
+})
+
 local Button = UniTab:CreateButton({
    Name = "Tracker Esp",
    Callback = function()
