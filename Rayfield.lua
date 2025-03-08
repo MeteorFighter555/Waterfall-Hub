@@ -89,9 +89,9 @@ char.Humanoid.JumpPower = (Value)
 })
 
 local ColorPicker = UniTab:CreateColorPicker({
-    Name = "Color Picker",
+    Name = "Tracer Color Picker",
     Color = Color3.fromRGB(255,255,255),
-    Flag = "ColorPicker1",
+    Flag = "TracerColor",
     Callback = function(Color)
         _G.TracerColor = Color -- Update tracer color dynamically
     end
