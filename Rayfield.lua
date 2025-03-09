@@ -337,3 +337,52 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/S1gmaGuy/Toji_Sigma_B
    -- The function that takes place when the button is pressed
    end,
 })
+
+local Button = TsbTab:CreateButton({
+   Name = "Sukuna Moveset",
+   Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/zyrask/Nexus-Base/main/atomic-blademaster%20to%20sukuna"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TsbTab:CreateButton({
+   Name = "Reaper Moveset",
+   Callback = function()
+         getgenv().Music = false
+--Setting this to false usually fixes most executors
+--also it helps load time a little bit
+getgenv().AttackQuality = 'High'
+--Set to Low,High
+
+ getgenv().ConstantSpeed = false
+--if you want your speed to be constant
+--Set to Low,High
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Reapvitalized/TSB/main/APOPHENIA.lua"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TsbTab:CreateButton({
+   Name = "Volta Moveset",
+   Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Reapvitalized/TSB/refs/heads/main/VOLTA.lua"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TsbTab:CreateButton({
+   Name = "Floating Girl",
+   Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Reapvitalized/TSB/refs/heads/main/FLOATING_GIRL.lua"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TsbTab:CreateButton({
+   Name = "Star Glitcher",
+   Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToSorcerer/main/Latest.lua"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
