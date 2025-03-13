@@ -88,7 +88,7 @@ char.Humanoid.JumpPower = (Value)
    end,
 })
 
-local Input = Tab:CreateInput({
+local Input = UniTab:CreateInput({
     Name = "Script Executor",
     CurrentValue = "",
     PlaceholderText = "Enter Lua Script...",
