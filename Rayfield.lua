@@ -95,25 +95,15 @@ local Input = Tab:CreateInput({
     RemoveTextAfterFocusLost = false,
     Flag = "Input1",
     Callback = function(Text)
-        -- Check if an exploit function exists
-        if loadstring then
-            local func, err = loadstring(Text)
-            if func then
-                local success, execErr = pcall(func)
-                if not success then
-                    warn("Execution Error: " .. execErr)
-                end
-            else
-                warn("Invalid Script: " .. err)
+        -- Try executing the input as a Lua script
+        local func, err = loadstring(Text)
+        if func then
+            local success, execErr = pcall(func)
+            if not success then
+                warn("Execution Error: " .. execErr)
             end
-        elseif getgenv and getgenv().loadstring then
-            -- Alternative execution for certain exploits
-            getgenv().loadstring(Text)()
-        elseif execute then
-            -- Some exploits use an "execute()" function
-            execute(Text)
         else
-            warn("No valid execution method found.")
+            warn("Invalid Script: " .. err)
         end
     end,
 })
