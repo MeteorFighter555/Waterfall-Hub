@@ -88,25 +88,36 @@ char.Humanoid.JumpPower = (Value)
    end,
 })
 
-local Input = UniTab:CreateInput({
+local Input = Tab:CreateInput({
     Name = "Script Executor",
     CurrentValue = "",
     PlaceholderText = "Enter Lua Script...",
     RemoveTextAfterFocusLost = false,
     Flag = "Input1",
     Callback = function(Text)
-        -- Attempt to run the text as a Lua script
-        local func, err = loadstring(Text)
-        if func then
-            local success, execErr = pcall(func)
-            if not success then
-                warn("Error executing script: " .. execErr)
+        -- Check if an exploit function exists
+        if loadstring then
+            local func, err = loadstring(Text)
+            if func then
+                local success, execErr = pcall(func)
+                if not success then
+                    warn("Execution Error: " .. execErr)
+                end
+            else
+                warn("Invalid Script: " .. err)
             end
+        elseif getgenv and getgenv().loadstring then
+            -- Alternative execution for certain exploits
+            getgenv().loadstring(Text)()
+        elseif execute then
+            -- Some exploits use an "execute()" function
+            execute(Text)
         else
-            warn("Invalid script: " .. err)
+            warn("No valid execution method found.")
         end
     end,
 })
+
 
 local ColorPicker = UniTab:CreateColorPicker({
     Name = "Tracer Color Picker",
