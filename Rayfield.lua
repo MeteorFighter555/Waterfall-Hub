@@ -88,6 +88,26 @@ char.Humanoid.JumpPower = (Value)
    end,
 })
 
+local Input = UniTab:CreateInput({
+    Name = "Script Executor",
+    CurrentValue = "",
+    PlaceholderText = "Enter Lua Script...",
+    RemoveTextAfterFocusLost = false,
+    Flag = "Input1",
+    Callback = function(Text)
+        -- Attempt to run the text as a Lua script
+        local func, err = loadstring(Text)
+        if func then
+            local success, execErr = pcall(func)
+            if not success then
+                warn("Error executing script: " .. execErr)
+            end
+        else
+            warn("Invalid script: " .. err)
+        end
+    end,
+})
+
 local ColorPicker = UniTab:CreateColorPicker({
     Name = "Tracer Color Picker",
     Color = Color3.fromRGB(255,255,255),
