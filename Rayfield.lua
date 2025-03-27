@@ -52,6 +52,14 @@ local Button = HomeTab:CreateButton({
    end,
 })
 
+local Button = HomeTab:CreateButton({
+   Name = "Server Hop",
+   Callback = function()
+         
+         
+   end,
+})
+
 local UniTab = Window:CreateTab("Universal", 4483362458) -- Title, Image
 
 local Label = UniTab:CreateLabel("Useful Part", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
