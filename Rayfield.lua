@@ -35,7 +35,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 Rayfield:Notify({
-   Title = "Welcome "..Player.Name..".",
+   Title = "Welcome To Waterfall Hub"..Player.Name..".",
    Content = "Thank You for using this "..Player.Name..".",
    Duration = 5,
    Image = House,
@@ -43,7 +43,7 @@ Rayfield:Notify({
 
 local HomeTab = Window:CreateTab("Home", 4483362458) -- Title, Image
 
-local Label = HomeTab:CreateLabel("Welcome to Waterfall Hub", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = HomeTab:CreateLabel("Waterfall Hub – The Ultimate Universal Exploit Hub", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 local Label = HomeTab:CreateLabel("You are logged in as "..Player.Name..".", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 local Button = HomeTab:CreateButton({
    Name = "Destroy Hub",
@@ -152,7 +152,7 @@ ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
 
 local UniTab = Window:CreateTab("Universal", 4483362458) -- Title, Image
 
-local Label = UniTab:CreateLabel("Useful Part", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = UniTab:CreateLabel("Core Feature", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Slider = UniTab:CreateSlider({
    Name = "Speed Slider",
@@ -393,7 +393,7 @@ local Button = UniTab:CreateButton({
    end,
 })
 
-local Label = UniTab:CreateLabel("Fun Scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = UniTab:CreateLabel("Extras", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = UniTab:CreateButton({
    Name = "Sonic Mode",
