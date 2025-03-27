@@ -63,6 +63,21 @@ local Button = HomeTab:CreateButton({
    end,
 })
 
+local Button = HomeTab:CreateButton({
+   Name = "Rejoin",
+   Callback = function()
+         
+local ts = game:GetService("TeleportService")
+
+local p = game:GetService("Players").LocalPlayer
+
+
+
+ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
+         
+   end,
+})
+
 local UniTab = Window:CreateTab("Universal", 4483362458) -- Title, Image
 
 local Label = UniTab:CreateLabel("Useful Part", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
