@@ -167,13 +167,6 @@ local Slider = UniTab:CreateSlider({
    -- The variable (Value) is a number which correlates to the value the slider is currently at
    end,
 })
-local Button = UniTab:CreateButton({
-   Name = "Reset Speed",
-   Callback = function()
-	Slider:Set(16)		
-   -- The function that takes place when the button is pressed
-   end,
-})
 
 local Slider = UniTab:CreateSlider({
    Name = "Jump Slider",
@@ -189,14 +182,6 @@ local char = plr.Character
 char.Humanoid.JumpPower = (Value)
    -- The function that takes place when the slider changes
    -- The variable (Value) is a number which correlates to the value the slider is currently at
-   end,
-})
-
-local Button = UniTab:CreateButton({
-   Name = "Reset Jump",
-   Callback = function()
-	Slider:Set(50)		
-   -- The function that takes place when the button is pressed
    end,
 })
 
