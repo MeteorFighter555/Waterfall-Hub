@@ -135,7 +135,7 @@ Teleport()
    end,
 })
 
-local Button = UniTab:CreateButton({
+local Button = HomeTab:CreateButton({
    Name = "Small Server Hop",
    Callback = function()
 	--[[
