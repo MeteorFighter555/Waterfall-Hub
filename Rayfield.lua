@@ -167,8 +167,13 @@ local Slider = UniTab:CreateSlider({
    -- The variable (Value) is a number which correlates to the value the slider is currently at
    end,
 })
-
-Slider:Set(16) -- The new slider integer value
+local Button = UniTab:CreateButton({
+   Name = "Reset Speed",
+   Callback = function()
+	Slider:Set(16)		
+   -- The function that takes place when the button is pressed
+   end,
+})
 
 local Slider = UniTab:CreateSlider({
    Name = "Jump Slider",
@@ -187,9 +192,15 @@ char.Humanoid.JumpPower = (Value)
    end,
 })
 
-Slider:Set(50) -- The new slider integer value
+local Button = UniTab:CreateButton({
+   Name = "Reset Jump",
+   Callback = function()
+	Slider:Set(50)		
+   -- The function that takes place when the button is pressed
+   end,
+})
 
-local ColorPicker = UniTab:CreateColorPicker({
+Local ColorPicker = UniTab:CreateColorPicker({
     Name = "Tracer Color Picker",
     Color = Color3.fromRGB(255,255,255),
     Flag = "TracerColor",
