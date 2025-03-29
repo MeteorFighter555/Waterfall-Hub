@@ -168,6 +168,8 @@ local Slider = UniTab:CreateSlider({
    end,
 })
 
+Slider:Set(16) -- The new slider integer value
+
 local Slider = UniTab:CreateSlider({
    Name = "Jump Slider",
    Range = {50, 200},
@@ -185,7 +187,9 @@ char.Humanoid.JumpPower = (Value)
    end,
 })
 
-Local ColorPicker = UniTab:CreateColorPicker({
+Slider:Set(50) -- The new slider integer value
+
+local ColorPicker = UniTab:CreateColorPicker({
     Name = "Tracer Color Picker",
     Color = Color3.fromRGB(255,255,255),
     Flag = "TracerColor",
