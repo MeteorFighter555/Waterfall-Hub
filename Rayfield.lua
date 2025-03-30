@@ -497,6 +497,18 @@ local Button = TsbTab:CreateButton({
 })
 
 local Button = TsbTab:CreateButton({
+   Name = "Gojo Satoru 2",
+   Callback = function()
+
+getgenv().FatalCombatSkillLayout = true -- [ DOESNT WORK ON ALL DEVICES. ]
+getgenv().MovesetReachSound = true -- [ PLAYS AN SOUND WHEN YOU FILL AN SECTION OF THE ULT BAR. ]
+
+loadstring(game:HttpGet("https://gist.githubusercontent.com/SonicexePort/d83f3eca5e8092468df1551df09db39a/raw/861f16fbae8fab8803cabfbc01295bb5b687f86a/Death%20Port%20Six%20Eyes%20Public%20Beta"))()		
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TsbTab:CreateButton({
    Name = "Toji Fushiguro",
    Callback = function()
          getgenv().RunTool = true -- useful i guess
