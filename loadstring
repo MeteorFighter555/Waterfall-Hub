@@ -13,3 +13,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Wate
 --rayfield
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Rayfield.lua",true))()
+
+--kj
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Rayfield.lua",true))()
