@@ -489,6 +489,14 @@ local Button = TsbTab:CreateButton({
 })
 
 local Button = TsbTab:CreateButton({
+   Name = "Unnamed Moveset",
+   Callback = function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/AeryAlex/Scripts/refs/heads/main/AeryAlex%20Moveset%20(Obsfucted).txt'))()		
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TsbTab:CreateButton({
    Name = "Gojo Satoru",
    Callback = function()
          loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToSorcerer/main/Latest.lua"))()
