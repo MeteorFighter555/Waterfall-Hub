@@ -483,7 +483,7 @@ local Button = TsbTab:CreateButton({
 local Button = TsbTab:CreateButton({
    Name = "Kj Run",
    Callback = function()
-			
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Kj.lua",true))()		
    -- The function that takes place when the button is pressed
    end,
 })
