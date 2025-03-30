@@ -390,6 +390,17 @@ tool.Parent = game.Players.LocalPlayer.Backpack
 })
 
 local Button = UniTab:CreateButton({
+   Name = "God Mode (Some games work)",
+   Callback = function()
+	--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+loadstring(game:HttpGet("https://freenote.biz/raw/Fhpx5r5A8M"))()		
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = UniTab:CreateButton({
    Name = "Force Shiftlock",
    Callback = function()
       loadstring(game:HttpGet('https://pastebin.com/raw/CjNsnSDy'))()
@@ -462,6 +473,14 @@ local TsbTab = Window:CreateTab("Tsb", 4483362458) -- Title, Image
 local Label = TsbTab:CreateLabel("Moveset Scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = TsbTab:CreateButton({
+   Name = "Kj Running",
+   Callback = function()
+			
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TsbTab:CreateButton({
    Name = "Gojo Satoru",
    Callback = function()
          loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToSorcerer/main/Latest.lua"))()
@@ -485,6 +504,14 @@ local Button = TsbTab:CreateButton({
    Name = "Sukuna Moveset",
    Callback = function()
          loadstring(game:HttpGet("https://raw.githubusercontent.com/zyrask/Nexus-Base/main/atomic-blademaster%20to%20sukuna"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TsbTab:CreateButton({
+   Name = "Mixed Powers",
+   Callback = function()
+			
    -- The function that takes place when the button is pressed
    end,
 })
