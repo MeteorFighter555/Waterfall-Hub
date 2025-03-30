@@ -473,9 +473,9 @@ local TsbTab = Window:CreateTab("Tsb", 4483362458) -- Title, Image
 local Label = TsbTab:CreateLabel("Moveset Scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = TsbTab:CreateButton({
-   Name = "Kj",
+   Name = "Kyra Kj (black figure might spawn)",
    Callback = function()
-			
+	loadstring(game:HttpGet("https://gist.githubusercontent.com/GoldenHeads2/5fe3178dff916f988d319c3bd5e4fc01/raw/b250ee6f967c4e84195a76ab7915fb1d79b53326/gistfile1.txt"))()		
    -- The function that takes place when the button is pressed
    end,
 })
