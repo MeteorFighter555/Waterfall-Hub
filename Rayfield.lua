@@ -54,6 +54,17 @@ local Button = HomeTab:CreateButton({
 })
 
 local Button = HomeTab:CreateButton({
+   Name = "Reset Character",
+   Callback = function()
+         --[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/2sneaky/rbxscripts.github.io/refs/heads/main/simple_reset"))()
+         
+   end,
+})
+
+local Button = HomeTab:CreateButton({
    Name = "Server Hop",
    Callback = function()
          
