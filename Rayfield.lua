@@ -473,7 +473,15 @@ local TsbTab = Window:CreateTab("Tsb", 4483362458) -- Title, Image
 local Label = TsbTab:CreateLabel("Moveset Scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = TsbTab:CreateButton({
-   Name = "Kj Running",
+   Name = "Kj",
+   Callback = function()
+			
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TsbTab:CreateButton({
+   Name = "Kj Run",
    Callback = function()
 			
    -- The function that takes place when the button is pressed
@@ -511,7 +519,7 @@ local Button = TsbTab:CreateButton({
 local Button = TsbTab:CreateButton({
    Name = "Mixed Powers",
    Callback = function()
-			
+	loadstring(game:HttpGet("https://pastebin.com/raw/Y3uyGSK6"))()		
    -- The function that takes place when the button is pressed
    end,
 })
