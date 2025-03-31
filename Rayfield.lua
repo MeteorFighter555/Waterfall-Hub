@@ -194,7 +194,7 @@ ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
 
 local UniTab = Window:CreateTab("Universal", 4483362458) -- Title, Image
 
-local Label = UniTab:CreateLabel("Core Feature", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = UniTab:CreateLabel("Core Features", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Slider = UniTab:CreateSlider({
    Name = "Speed Slider",
@@ -461,9 +461,17 @@ loadstring(game:HttpGetAsync("https://pastebin.com/raw/uacVtsWe"))()
 })
 
 local Button = UniTab:CreateButton({
-   Name = "Good Cop Bad Cop",
+   Name = "Place Holder",
    Callback = function()
-loadstring(game:HttpGetAsync("https://pastebin.com/raw/hSqRZPLd"))()
+			
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = UniTab:CreateButton({
+   Name = "Seraphic Sword (FE)",
+   Callback = function()
+	loadstring(game:HttpGet("https://pastefy.app/59mJGQGe/raw"))() --Anim		
    -- The function that takes place when the button is pressed
    end,
 })
