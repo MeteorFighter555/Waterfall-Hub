@@ -481,9 +481,58 @@ local TsbTab = Window:CreateTab("Tsb", 4483362458) -- Title, Image
 local Label = TsbTab:CreateLabel("Moveset Scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Button = TsbTab:CreateButton({
-   Name = "Kyra Kj (black figure might spawn)",
+   Name = "KadeJ Script",
    Callback = function()
-	loadstring(game:HttpGet("https://gist.githubusercontent.com/GoldenHeads2/5fe3178dff916f988d319c3bd5e4fc01/raw/b250ee6f967c4e84195a76ab7915fb1d79b53326/gistfile1.txt"))()		
+	----<< BOOTLEG KJ / Baldy To KJ / KaitamJ >>----
+--[[ Credits: 
+- i.am.an.agent : Script Developer
+- _1.8e308 : Revival Of Script, Script Developer
+]]
+
+--// BUILD January 11 12:00 PM GMT+8 by i.am.an.agent
+
+getgenv().Moveset_Settings = {
+    ["ExecuteOnRespawn"] = true, --// If true, the moveset will load everytime you respawn
+
+    ["TSBStyleNotification"] = true, --// If true, uses the TSB notification when you spawn in with KJ
+
+    ["UseOldCollateralRuin"] = true, --// If true, uses the old Collateral Ruin VFX and SFX
+
+    ["NoWarning"] = true, --// If true, removes the warning that appears when you're not on Saitama
+    ["NoDeathCounterImages"] = false, --// If true, will disable the images that appear in death counter slap
+    ["NoBarrageArms"] = false, --// If true, will destroy the barrage arms that appear when you use consecutive punch
+    ["NoPreysPerilAttract"] = true, --// If true, preys peril will not be able to attract you.
+    ["NoWalls"] = false,
+    ["NoTrees"] = false,
+
+    ["RavageTool"] = true,
+    ["AdrenalineBoostTool"] = true,
+    ["Adrenaline_Multiplier"] = 2, --// how much adrenaline multiplies your speed by
+
+    ["CustomUppercutAnimation"] = true,
+    ["CustomDownslamAnimation"] = true,
+    ["CustomIdleAnimation"] = true,
+
+    ["UltNames"] = {
+        "20 SERIES",
+        "COME AT ME",
+        "I'M DONE",
+    },
+
+    ["MoveNames"] = {
+        ["Normal Punch"] = "Ravaging Kick",
+        ["Consecutive Punches"] = "Fist Fusillade",
+        ["Shove"] = "Swift Sweep",
+        ["Uppercut"] = "Collateral Storm",
+
+        ["Death Counter"] = "Sudden Strike",
+        ["Table Flip"] = "Stoic Bomb",
+        ["Serious Punch"] = "Destructive Power",
+        ["Omni Directional Punch"] = "Omni Directional Fists"
+    },
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToKJ/refs/heads/main/Latest.lua"))()		
    -- The function that takes place when the button is pressed
    end,
 })
