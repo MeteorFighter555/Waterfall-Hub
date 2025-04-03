@@ -433,18 +433,19 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 })
 
 local Button = UniTab:CreateButton({
-   Name = "Pshade Ultimate",
+   Name = "Dark Dex Explorer",
    Callback = function()
-         loadstring(game:HttpGet('https://raw.githubusercontent.com/randomstring0/pshade-ultimate/refs/heads/main/src/cd.lua'))()
---pshade ultimate--
+	loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()					
    -- The function that takes place when the button is pressed
    end,
 })
 
+local Label = UniTab:CreateLabel("Shaders", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 local Button = UniTab:CreateButton({
-   Name = "Rtx Shaders",
+   Name = "Pshade Ultimate",
    Callback = function()
-         loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/randomstring0/pshade-ultimate/refs/heads/main/src/cd.lua'))()
+--pshade ultimate--
    -- The function that takes place when the button is pressed
    end,
 })
