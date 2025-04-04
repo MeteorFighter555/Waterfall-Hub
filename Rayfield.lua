@@ -1,5 +1,7 @@
 --The Ui part
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+--Sirius Script thingy
+loadstring(game:HttpGet('https://sirius.menu/script'))()
 local Player = game.Players.LocalPlayer
 local Window = Rayfield:CreateWindow({
    Name = "Waterfall Hub",
@@ -651,6 +653,3 @@ local Button = TsbTab:CreateButton({
    -- The function that takes place when the button is pressed
    end,
 })
-
---Sirius Script thingy
-loadstring(game:HttpGet('https://sirius.menu/script'))()
