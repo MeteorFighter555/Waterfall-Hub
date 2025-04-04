@@ -1,20 +1,20 @@
 local WindUI = loadstring(game:HttpGet("https://tree-hub.vercel.app/api/UI/WindUI"))()
 local Window = WindUI:CreateWindow({
     Title = "Waterfall Hub", -- UI Title
-    Icon = "Droplets", -- Url or rbxassetid or lucide
+    Icon = "droplets", -- Url or rbxassetid or lucide
     Author = "Meteorfighter", -- Author & Creator
     Folder = "WaterfallHub", -- Folder name for saving data (And key)
     Size = UDim2.fromOffset(580, 460), -- UI Size
     KeySystem = { -- Creates key system
-        Key = "SigmaSkibidi", -- key
-        Note = "The Key is SigmaSkibidi", -- Note
-        URL = "https://github.com/MeteorFighter555/Waterfall-Hub", -- URL To get key (example: Discord)
-        SaveKey = true, -- Saves the key in the folder specified above
+        Key = "SkibidiSigma", -- key
+        Note = "Its SkibidiSigma", -- Note
+        URL = "https://discord.gg/vsauztQYNX", -- URL To get key (example: Discord)
+        SaveKey = false, -- Saves the key in the folder specified above
     }, 
     Transparent = true,-- UI Transparency
     Theme = "Dark", -- UI Theme
     SideBarWidth = 170, -- UI Sidebar Width (number)
-    HasOutline = true, -- Adds Oultines to the window
+    HasOutline = true, -- Adds Outlines to the window
 })
 
 local Tab = Window:Tab({
@@ -23,7 +23,7 @@ local Tab = Window:Tab({
 })
 
 local Section = Tab:Section({ 
-    Title = "Test",
+    Title = "Universal Scripts",
     TextXAlignment = "Left",
     TextSize = 17, -- Default Size
 })
