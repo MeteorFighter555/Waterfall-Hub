@@ -1,18 +1,10 @@
---Ui only
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Waterfall%20UI.lua",true))()
-
---with toggle
-
-loadstring(game:HttpGet"https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Toggle%20test",true))()
-
---with key
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/key%20system",true))()
-
 --rayfield
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Rayfield.lua",true))()
+
+--Waterfall Hub
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Waterfall%20Hub.lua",true))()
 
 --kj
 
