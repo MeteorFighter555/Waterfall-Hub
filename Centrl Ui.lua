@@ -9,17 +9,44 @@ centrl:load({
     },
     Theme = {
         Accent = Color3.fromRGB(33, 89, 194), -- Accent color
-        Hitbox =  Color3.fromRGB(234, 9, 215) -- Hitbox color (ex. toggle, slider)
+        Hitbox =  Color3.fromRGB(33, 89, 194) -- Hitbox color (ex. toggle, slider)
     }
 })
 
 local main = centrl:int({
-    Title = 'CrudeHub', -- Title of UI
-    Sub = 'Pet Sim x' -- Sub Text
+    Title = 'Waterfall Hub', -- Title of UI
+    Sub = 'Almost Professinal Roblox Scripting Hub' -- Sub Text
 })
 
-local Tab = main:IntTab('Main') -- More Features Coming Soon!
+local Tab = main:IntTab('Universal') -- More Features Coming Soon!
 
-local s1 = Tab:IntSection('Main', {
+local s1 = Tab:IntSection('Universal Scripts', {
     Side = 'L' -- Side of section ('L' - Left, 'R' - Right)
+})
+
+s1:createSlider({
+	Title = 'Speed Slider',
+	Sliders = {
+		{
+			title = 'Speed',
+			range = {1,200},
+			increment = 1,
+			startvalue = 16,
+			callback = function(speed)
+
+				game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+
+			end,
+		},
+		{
+			title = 'Smoothness',
+			range = {1,200},
+			increment = 1,
+			startvalue = 16,
+			callback = function(lol)
+
+
+			end,
+		},
+	}
 })
