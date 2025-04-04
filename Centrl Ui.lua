@@ -4,11 +4,11 @@ centrl:load({
     Logo = '14258098097', -- ID Only (required, optional soon)
     ConfigEnabled = {
         Enabled = true, -- If Config Saving is desired leave true
-        Cfolder = 'Centrlontop', -- Folder Name
-        Cfile = 'Config' -- Config File Name (credits to rayfield for layout (not skidded)
+        Cfolder = 'WaterfallHub', -- Folder Name
+        Cfile = 'WaterfallConfig' -- Config File Name (credits to rayfield for layout (not skidded)
     },
     Theme = {
-        Accent = Color3.fromRGB(234, 9, 215), -- Accent color
+        Accent = Color3.fromRGB(33, 89, 194), -- Accent color
         Hitbox =  Color3.fromRGB(234, 9, 215) -- Hitbox color (ex. toggle, slider)
     }
 })
