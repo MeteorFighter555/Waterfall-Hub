@@ -1,3 +1,6 @@
+--Sirius Script thingy
+loadstring(game:HttpGet('https://sirius.menu/script'))()
+--The Ui part
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Player = game.Players.LocalPlayer
 local Window = Rayfield:CreateWindow({
