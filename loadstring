@@ -1,3 +1,7 @@
+--Centrl Ui
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Centrl%20Ui.lua",true))()
+
 --rayfield
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Rayfield.lua",true))()
