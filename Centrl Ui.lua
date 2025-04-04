@@ -54,7 +54,7 @@ char.Humanoid.JumpPower = (value)
 	}
 })
 
-s2:createColorpicker({
+s1:createColorpicker({
 	Title = 'Tracer Color',
 	Color = Color3.fromRGB(255, 255, 255), -- Starter Color
 	Callback = function(Color)
