@@ -1,5 +1,3 @@
---Sirius Script thingy
-loadstring(game:HttpGet('https://sirius.menu/script'))()
 --The Ui part
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Player = game.Players.LocalPlayer
@@ -653,3 +651,6 @@ local Button = TsbTab:CreateButton({
    -- The function that takes place when the button is pressed
    end,
 })
+
+--Sirius Script thingy
+loadstring(game:HttpGet('https://sirius.menu/script'))()
