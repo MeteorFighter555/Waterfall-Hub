@@ -44,12 +44,3 @@ local Tab = Window:CreateTab({
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
-Tab:CreateSection("Universal Scripts")
-
-local Button = Tab:CreateButton({
-	Name = "Button Example!",
-	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
-    	Callback = function()
-         -- The function that takes place when the button is pressed
-    	end
-})
