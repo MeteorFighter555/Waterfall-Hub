@@ -1,5 +1,5 @@
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/main/source.lua", true))()
-
+local Player = game.Players.LocalPlayer
 local Window = Luna:CreateWindow({
 	Name = "Waterfall Hub", -- This Is Title Of Your Window
 	Subtitle = nil, -- A Gray Subtitle next To the main title.
@@ -29,9 +29,34 @@ local Window = Luna:CreateWindow({
 	}
 })
 
+Luna:Notification({ 
+	Title = "Thank You for using this "..Player.Name..".",
+	Icon = "notifications_active",
+	ImageSource = "Material",
+	Content = "This script is made by Meteorfighter"
+})
+
+Window:CreateHomeTab({
+	SupportedExecutors = {}, -- A Table Of Executors Your Script Supports. Add strings of the executor names for each executor.
+	DiscordInvite = "1234", -- The Discord Invite Link. Do Not Include discord.gg/ | Only Include the code.
+	Icon = 1, -- By Default, The Icon Is The Home Icon. If You would like to change it to dashboard, replace the interger with 2
+})
+
+Tab:CreateDivider()
+
 local Tab = Window:CreateTab({
 	Name = "Universal",
 	Icon = "braces",
 	ImageSource = "lucide",
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
+
+Tab:CreateSection("Universal Scripts")
+
+local Button = Tab:CreateButton({
+	Name = "Button Example!",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+         -- The function that takes place when the button is pressed
+    	end
 })
