@@ -35,8 +35,6 @@ Window:CreateHomeTab({
 	Icon = 1, -- By Default, The Icon Is The Home Icon. If You would like to change it to dashboard, replace the interger with 2
 })
 
-Tab:CreateDivider()
-
 local Tab = Window:CreateTab({
 	Name = "Universal",
 	Icon = "braces",
