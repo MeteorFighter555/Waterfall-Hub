@@ -78,7 +78,7 @@ local ColorPicker = Tab:CreateColorPicker({
 
 local Button = Tab:CreateButton({
 	Name = "Tracer Esp",
-	Description = Creates lines that point to every player, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
     	Callback = function()
 		       -- Define a global variable to track the state of the tracers
        if _G.TracersEnabled == nil then
