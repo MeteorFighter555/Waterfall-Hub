@@ -30,6 +30,137 @@ local Window = Luna:CreateWindow({
 })
 
 local Tab = Window:CreateTab({
+	Name = "Server",
+	Icon = "view_in_ar",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
+
+local Button = Tab:CreateButton({
+	Name = "Server Hop",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+local File = pcall(function()
+    AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+end)
+if not File then
+    table.insert(AllIDs, actualHour)
+    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+end
+function TPReturner()
+    local Site;
+    if foundAnything == "" then
+        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+    else
+        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+    end
+    local ID = ""
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+        foundAnything = Site.nextPageCursor
+    end
+    local num = 0;
+    for i,v in pairs(Site.data) do
+        local Possible = true
+        ID = tostring(v.id)
+        if tonumber(v.maxPlayers) > tonumber(v.playing) then
+            for _,Existing in pairs(AllIDs) do
+                if num ~= 0 then
+                    if ID == tostring(Existing) then
+                        Possible = false
+                    end
+                else
+                    if tonumber(actualHour) ~= tonumber(Existing) then
+                        local delFile = pcall(function()
+                            delfile("NotSameServers.json")
+                            AllIDs = {}
+                            table.insert(AllIDs, actualHour)
+                        end)
+                    end
+                end
+                num = num + 1
+            end
+            if Possible == true then
+                table.insert(AllIDs, ID)
+                wait()
+                pcall(function()
+                    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                    wait()
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                end)
+                wait(4)
+            end
+        end
+    end
+end
+
+function Teleport()
+    while wait() do
+        pcall(function()
+            TPReturner()
+            if foundAnything ~= "" then
+                TPReturner()
+            end
+        end)
+    end
+end
+
+-- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
+Teleport()	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Small Server Hop",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		local Lowest = "ping" -- set to "playing" to find the lowest player server
+
+local HTTPService = game:GetService("HttpService")
+
+local success, servers = pcall(function()
+   return HTTPService:JSONDecode(game:HttpGet(
+       "https://games.roblox.com/v1/games/" .. tostring(game.PlaceId) .. "/servers/Public?limit=100"
+   )).data
+end)
+
+if not success then return end
+
+local server = servers[1]
+
+for i,svr in pairs(servers) do
+   if svr[Lowest] < server[Lowest] then
+       server = svr
+   end
+end
+
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, server.id)		
+   -- The function that takes place when the button is pressed	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Rejoin",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		local ts = game:GetService("TeleportService")
+
+local p = game:GetService("Players").LocalPlayer
+
+
+
+ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Tab = Window:CreateTab({
 	Name = "Universal",
 	Icon = "view_in_ar",
 	ImageSource = "Material",
@@ -405,4 +536,30 @@ _G.FullBrightEnabled = not _G.FullBrightEnabled
    -- The function that takes place when the button is pressed	
          -- The function that takes place when the button is pressed
     	end
+})
+
+Tab:CreateSection("Extras")
+
+local Button = Tab:CreateButton({
+	Name = "Sonic Mode",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		loadstring(game:HttpGetAsync("https://pastebin.com/raw/uacVtsWe"))()	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Seraphic Sword Gui",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		loadstring(game:HttpGet("https://pastefy.app/59mJGQGe/raw"))() --Anim	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+Window:CreateHomeTab({
+	SupportedExecutors = {}, -- A Table Of Executors Your Script Supports. Add strings of the executor names for each executor.
+	DiscordInvite = "1234", -- The Discord Invite Link. Do Not Include discord.gg/ | Only Include the code.
+	Icon = 1, -- By Default, The Icon Is The Home Icon. If You would like to change it to dashboard, replace the interger with 2
 })
