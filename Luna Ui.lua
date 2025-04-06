@@ -208,3 +208,71 @@ local Button = Tab:CreateButton({
          -- The function that takes place when the button is pressed
     	end
 })
+
+local Button = Tab:CreateButton({
+	Name = "Click Tp Tool",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Click Teleport"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "God Mode (some games work)",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		loadstring(game:HttpGet("https://freenote.biz/raw/Fhpx5r5A8M"))()	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Force Shiftlock",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/CjNsnSDy'))()	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Button Example!",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Button Example!",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Button Example!",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Button Example!",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+         -- The function that takes place when the button is pressed
+    	end
+})
