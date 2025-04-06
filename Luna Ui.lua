@@ -30,18 +30,11 @@ local Window = Luna:CreateWindow({
 })
 
 local Tab = Window:CreateTab({
-	Name = "Tab Example",
+	Name = "Universal",
 	Icon = "view_in_ar",
 	ImageSource = "Material",
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
-Tab:CreateSection("Section Example")
+Tab:CreateSection("Universal Scripts")
 
-local Button = Tab:CreateButton({
-	Name = "Button Example!",
-	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
-    	Callback = function()
-         -- The function that takes place when the button is pressed
-    	end
-})
