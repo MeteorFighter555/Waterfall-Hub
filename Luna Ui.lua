@@ -36,5 +36,5 @@ local Tab = Window:CreateTab({
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
-Tab:CreateSection("Universal Scripts")
+Tab:CreateSection("These scripts works almost every game")
 
