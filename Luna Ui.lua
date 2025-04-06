@@ -38,3 +38,14 @@ local Tab = Window:CreateTab({
 
 Tab:CreateSection("These scripts works almost every game")
 
+local Slider = Tab:CreateSlider({
+	Name = "Slider Example",
+	Range = {16, 200}, -- The Minimum And Maximum Values Respectively
+	Increment = 1, -- Basically The Changing Value/Rounding Off
+	CurrentValue = 16, -- The Starting Value
+    	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)	
+       	 -- The function that takes place when the slider changes
+       	 -- The variable (Value) is a number which correlates to the value the slider is currently at
+    	end
+}, "Slider") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
