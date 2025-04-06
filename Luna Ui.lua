@@ -39,7 +39,7 @@ local Tab = Window:CreateTab({
 Tab:CreateSection("These scripts works almost every game")
 
 local Slider = Tab:CreateSlider({
-	Name = "Slider Example",
+	Name = "Speed Slider",
 	Range = {16, 200}, -- The Minimum And Maximum Values Respectively
 	Increment = 1, -- Basically The Changing Value/Rounding Off
 	CurrentValue = 16, -- The Starting Value
@@ -51,7 +51,7 @@ local Slider = Tab:CreateSlider({
 }, "SpeedSlider") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
 local Slider = Tab:CreateSlider({
-	Name = "Slider Example",
+	Name = "Jump Slider",
 	Range = {50, 200}, -- The Minimum And Maximum Values Respectively
 	Increment = 1, -- Basically The Changing Value/Rounding Off
 	CurrentValue = 50, -- The Starting Value
