@@ -25,7 +25,7 @@ Deity/dp4pv/x64x70 | Certain Scripting and Testing ig
 
 local Release = "Prerelease Beta 6.1"
 
-local Luna = { Folder = "Luna", Options = {}, ThemeGradient = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(117, 164, 206)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(123, 201, 201)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(224, 138, 175))} }
+local Luna = { Folder = "Luna", Options = {}, ThemeGradient = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(117, 164, 206)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(28, 50, 176)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(12, 18, 89))} }
 
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -1845,7 +1845,7 @@ local function Hide(Window, bind, notif)
 	bind = string.split(tostring(bind), "Enum.KeyCode.")
 	bind = bind[2]
 	if notif then
-		Luna:Notification({Title = "Interface Hidden", Content = "The interface has been hidden, you may reopen the interface by Pressing the UI Bind In Settings ("..tostring(bind)..")", Icon = "visibility_off"})
+		
 	end
 	tween(Window, {BackgroundTransparency = 1})
 	tween(Window.Elements, {BackgroundTransparency = 1})
@@ -2833,24 +2833,24 @@ function Luna:CreateWindow(WindowSettings)
 						TweenService:Create(Button, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundColor3 = Color3.fromRGB(32, 30, 38)}):Play()
 						TweenService:Create(Button.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0.5}):Play()
 					else
-						tween(Button.UIStroke, {Color = Color3.fromRGB(136, 131, 163)})
+						tween(Button.UIStroke, {Color = Color3.fromRGB(76, 77, 140)})
 						wait(0.2)
 						if ButtonV.Hover then
-							tween(Button.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+							tween(Button.UIStroke, {Color = Color3.fromRGB(81, 76, 107)})
 						else
-							tween(Button.UIStroke, {Color = Color3.fromRGB(64,61,76)})
+							tween(Button.UIStroke, {Color = Color3.fromRGB(47, 39, 77)})
 						end
 					end
 				end)
 
 				Button["MouseEnter"]:Connect(function()
 					ButtonV.Hover = true
-					tween(Button.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+					tween(Button.UIStroke, {Color = Color3.fromRGB(81, 76, 107)})
 				end)
 
 				Button["MouseLeave"]:Connect(function()
 					ButtonV.Hover = false
-					tween(Button.UIStroke, {Color = Color3.fromRGB(64,61,76)})
+					tween(Button.UIStroke, {Color = Color3.fromRGB(40, 32, 74)})
 				end)
 
 				function ButtonV:Set(ButtonSettings2)
