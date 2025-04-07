@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("comingsoon.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/yarrosvault/landingpod/main/FR"))()
 
 Library.load.CreateLoader({
     Title = "Moonrock Hub",
