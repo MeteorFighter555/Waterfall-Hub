@@ -1,4 +1,4 @@
-local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Luna%20Ui%20Mod.lua", true))()
+local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/main/source.lua", true))()
 
 local Window = Luna:CreateWindow({
 	Name = "Waterfall Hub", -- This Is Title Of Your Window
