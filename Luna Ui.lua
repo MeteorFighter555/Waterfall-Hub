@@ -553,6 +553,191 @@ local Button = Tab:CreateButton({
     	end
 })
 
+local Tab = Window:CreateTab({
+	Name = "The Strongest Battlegrounds",
+	Icon = "sports_mma",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
+
+Tab:CreateSection("Moveset Scripts")
+
+local Button = Tab:CreateButton({
+	Name = "KadeJ (Kj)",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		----<< BOOTLEG KJ / Baldy To KJ / KaitamJ >>----
+--[[ Credits: 
+- i.am.an.agent : Script Developer
+- _1.8e308 : Revival Of Script, Script Developer
+]]
+
+--// BUILD January 11 12:00 PM GMT+8 by i.am.an.agent
+
+getgenv().Moveset_Settings = {
+    ["ExecuteOnRespawn"] = true, --// If true, the moveset will load everytime you respawn
+
+    ["TSBStyleNotification"] = true, --// If true, uses the TSB notification when you spawn in with KJ
+
+    ["UseOldCollateralRuin"] = true, --// If true, uses the old Collateral Ruin VFX and SFX
+
+    ["NoWarning"] = true, --// If true, removes the warning that appears when you're not on Saitama
+    ["NoDeathCounterImages"] = false, --// If true, will disable the images that appear in death counter slap
+    ["NoBarrageArms"] = false, --// If true, will destroy the barrage arms that appear when you use consecutive punch
+    ["NoPreysPerilAttract"] = true, --// If true, preys peril will not be able to attract you.
+    ["NoWalls"] = false,
+    ["NoTrees"] = false,
+
+    ["RavageTool"] = true,
+    ["AdrenalineBoostTool"] = true,
+    ["Adrenaline_Multiplier"] = 2, --// how much adrenaline multiplies your speed by
+
+    ["CustomUppercutAnimation"] = true,
+    ["CustomDownslamAnimation"] = true,
+    ["CustomIdleAnimation"] = true,
+
+    ["UltNames"] = {
+        "20 SERIES",
+        "COME AT ME",
+        "I'M DONE",
+    },
+
+    ["MoveNames"] = {
+        ["Normal Punch"] = "Ravaging Kick",
+        ["Consecutive Punches"] = "Fist Fusillade",
+        ["Shove"] = "Swift Sweep",
+        ["Uppercut"] = "Collateral Storm",
+
+        ["Death Counter"] = "Sudden Strike",
+        ["Table Flip"] = "Stoic Bomb",
+        ["Serious Punch"] = "Destructive Power",
+        ["Omni Directional Punch"] = "Omni Directional Fists"
+    },
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToKJ/refs/heads/main/Latest.lua"))()	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Kj Dropkick Tool",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Kj.lua",true))()			
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "A-Train Moveset",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/yzeedw/Mortalv2-main/main/A%20train/Moveset"))()			
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Unnamed Moveset",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/AeryAlex/Scripts/refs/heads/main/AeryAlex%20Moveset%20(Obsfucted).txt'))()			
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Gojo Satoru",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+	         loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/BaldyToSorcerer/main/Latest.lua"))()		
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Gojo Satoru 2",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		getgenv().FatalCombatSkillLayout = true -- [ DOESNT WORK ON ALL DEVICES. ]
+getgenv().MovesetReachSound = true -- [ PLAYS AN SOUND WHEN YOU FILL AN SECTION OF THE ULT BAR. ]
+
+loadstring(game:HttpGet("https://gist.githubusercontent.com/SonicexePort/d83f3eca5e8092468df1551df09db39a/raw/861f16fbae8fab8803cabfbc01295bb5b687f86a/Death%20Port%20Six%20Eyes%20Public%20Beta"))()		
+	
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Toji Fushiguro",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+	getgenv().RunTool = true -- useful i guess
+         getgenv().TpTool = ture -- kinda useless just tps to closest player
+         getgenv().TpTool2 = true -- useful tps u to whatever u click
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S1gmaGuy/Toji_Sigma_Boy/refs/heads/main/100%%20Sigma%20Boy"))()
+		
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Sukuna Moveset",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+	         loadstring(game:HttpGet("https://raw.githubusercontent.com/zyrask/Nexus-Base/main/atomic-blademaster%20to%20sukuna"))()		
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Mixed Powers",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/Y3uyGSK6"))()				
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Reaper Moveset",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+	         getgenv().Music = false
+--Setting this to false usually fixes most executors
+--also it helps load time a little bit
+getgenv().AttackQuality = 'High'
+--Set to Low,High
+
+ getgenv().ConstantSpeed = false
+--if you want your speed to be constant
+--Set to Low,High
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Reapvitalized/TSB/main/APOPHENIA.lua"))()
+		
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Volta Moveset",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+	         loadstring(game:HttpGet("https://raw.githubusercontent.com/Reapvitalized/TSB/refs/heads/main/VOLTA.lua"))()		
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Floating Girl",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+	         loadstring(game:HttpGet("https://raw.githubusercontent.com/Reapvitalized/TSB/refs/heads/main/FLOATING_GIRL.lua"))()		
+         -- The function that takes place when the button is pressed
+    	end
+})
+
 Window:CreateHomeTab({
 	SupportedExecutors = {}, -- A Table Of Executors Your Script Supports. Add strings of the executor names for each executor.
 	DiscordInvite = "1234", -- The Discord Invite Link. Do Not Include discord.gg/ | Only Include the code.
