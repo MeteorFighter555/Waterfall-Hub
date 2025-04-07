@@ -744,4 +744,4 @@ Window:CreateHomeTab({
 	Icon = 1, -- By Default, The Icon Is The Home Icon. If You would like to change it to dashboard, replace the interger with 2
 })
 
-
+loadstring(game:HttpGet('https://sirius.menu/sirius'))()
