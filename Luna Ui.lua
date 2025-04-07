@@ -1,4 +1,4 @@
-local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/main/source.lua", true))()
+local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Luna%20Ui%20Mod.lua", true))()
 
 local Window = Luna:CreateWindow({
 	Name = "Waterfall Hub", -- This Is Title Of Your Window
@@ -743,7 +743,5 @@ Window:CreateHomeTab({
 	DiscordInvite = "1234", -- The Discord Invite Link. Do Not Include discord.gg/ | Only Include the code.
 	Icon = 1, -- By Default, The Icon Is The Home Icon. If You would like to change it to dashboard, replace the interger with 2
 })
-
-Tab:BuildThemeSection() -- Tab Should be the name of the tab you are adding this section to.
 
 loadstring(game:HttpGet('https://sirius.menu/sirius'))()
