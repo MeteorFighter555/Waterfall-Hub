@@ -744,4 +744,6 @@ Window:CreateHomeTab({
 	Icon = 1, -- By Default, The Icon Is The Home Icon. If You would like to change it to dashboard, replace the interger with 2
 })
 
+Tab:BuildThemeSection() -- Tab Should be the name of the tab you are adding this section to.
+
 loadstring(game:HttpGet('https://sirius.menu/sirius'))()
