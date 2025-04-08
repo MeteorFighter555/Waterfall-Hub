@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("YOUR_RAW_SCRIPT_URL"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Ai%20library.lua"))()
 
 local Window = Library:CreateWindow("My Exploit")
 
