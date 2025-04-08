@@ -1,0 +1,14 @@
+local Library = loadstring(game:HttpGet("YOUR_RAW_SCRIPT_URL"))()
+
+local Window = Library:CreateWindow("My Exploit")
+
+local MainTab = Window:CreateTab("Main")
+local VisualsTab = Window:CreateTab("Visuals")
+
+MainTab:AddButton("Aimbot", function()
+    print("Aimbot activated!")
+end)
+
+VisualsTab:AddButton("ESP", function()
+    print("ESP activated!")
+end)
