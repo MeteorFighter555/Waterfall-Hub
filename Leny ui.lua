@@ -3,17 +3,18 @@ local Library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/
 Library.new({
 	sizeX = 770,
 	sizeY = 600,
-	title = "yo",
+	title = "Waterfall Hub",
 	tabWidth = 200, -- (72 for icons only)
-	PrimaryBackgroundColor = Library.Theme.PrimaryBackgroundColor,
-	SecondaryBackgroundColor = Library.Theme.SecondaryBackgroundColor,
-	TertiaryBackgroundColor = Library.Theme.TertiaryBackgroundColor,
-	TabBackgroundColor = Library.Theme.TabBackgroundColor,
-	PrimaryTextColor = Library.Theme.PrimaryTextColor,
-	SecondaryTextColor = Library.Theme.SecondaryTextColor,
-	PrimaryColor = Library.Theme.PrimaryColor,
-	ScrollingBarImageColor = Library.Theme.ScrollingBarImageColor,
-	Line = Library.Theme.Line,
+	PrimaryBackgroundColor = Color3.fromRGB(15, 18, 23),  -- Deep blue-gray for the main background
+        SecondaryBackgroundColor = Color3.fromRGB(10, 12, 17),  -- Darker background for secondary elements
+	TertiaryBackgroundColor = Color3.fromRGB(240, 248, 255),  -- Light misty blue for lighter UI elements
+	TabBackgroundColor = Color3.fromRGB(50, 60, 80),  -- Medium dark blue for tabs
+	PrimaryTextColor = Color3.fromRGB(255, 255, 255),  -- White text for readability
+	SecondaryTextColor = Color3.fromRGB(180, 210, 230),  -- Soft light blue for secondary text
+	PrimaryColor = Color3.fromRGB(90, 160, 255),  -- Vibrant blue for primary accents and buttons
+	ScrollingBarImageColor = Color3.fromRGB(135, 170, 195),  -- Muted blue-gray for scrollbar
+	Line = Color3.fromRGB(35, 40, 50),  -- Dark blue-gray for dividing lines
+
 })
 
 Library:notify({
