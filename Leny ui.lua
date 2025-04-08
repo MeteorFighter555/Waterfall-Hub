@@ -203,7 +203,12 @@ Section:createButton({
 	end
 })
 
-
+Section:createButton({
+	text = "Button 1",
+	callback = function()
+		print("this is a button")
+	end
+})
 
 -- Creates the theme changer, config manager, etc
 Library:createManager({
