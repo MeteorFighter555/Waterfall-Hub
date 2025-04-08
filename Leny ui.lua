@@ -32,7 +32,7 @@ local Tab = Library:createTab({
 })
 
 local Page1 = Tab:createSubTab({
-	text = "Page 1",
+	text = "Universal",
 	sectionStyle = "Double", -- Make the page a single section style or double, "Single", "Double"
 })
 
@@ -46,74 +46,163 @@ Section:createSlider({
 	min = 16,
 	max = 200,
 	step = 1,
-	callback = function(value)
-		print(value)
+	callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)	
 	end
 }) -- :getValue(), :updateValue({value = 100})
 
-
+Section:createSlider({
+	text = "Jump Slider",
+	min = 50,
+	max = 200,
+	step = 1,
+	callback = function(Value)
+		local plr = game.Players.LocalPlayer
+local char = plr.Character
+ 
+char.Humanoid.JumpPower = (Value)
+	end
+}) -- :getValue(), :updateValue({value = 100})
 
 Section:createPicker({
-	text = "ColorPicker 1",
+	text = "Tracer ColorPicker",
 	default = Color3.fromRGB(255, 255, 255),
-	callback = function(color)
-		print(color)
+	callback = function(Color)
+		_G.TracerColor = Color
 	end
 }) -- :getColor(), :updateColor({color = Color3.fromRGB(255, 255, 0)})
 
-Section:createDropdown({
-	text = "Dropdown 1",
-	list = {"Hello", "World!"},
-	default = {"Hello"},
-	multiple = false, -- choose multiple from list, makes callback value return a table now
-	callback = function(value)
-		print(value)
-	end
-}) -- :getList() (returns the list you provided, not the value), :getValue(), :updateList({list = {1,2,3}, default = {1, 2}})
-
-Section:createDropdown({
-	text = "Multiselect Dropdown",
-	list = {1,2,3,4,5},
-	default = {1,2},
-	multiple = true,
-	callback = function(value)
-		print(unpack(value))
-	end
-})
-
 Section:createButton({
-	text = "Button 1",
+	text = "Tracer ESP",
 	callback = function()
-		print("this is a button")
+		 if _G.TracersEnabled == nil then
+           _G.TracersEnabled = false
+       end
+
+       local function API_Check()
+           if Drawing == nil then
+               return "No"
+           else
+               return "Yes"
+           end
+       end
+
+       local Find_Required = API_Check()
+
+       if Find_Required == "No" then
+           game:GetService("StarterGui"):SetCore("SendNotification", {
+               Title = "Meteorfighter";
+               Text = "Tracer script could not be loaded because your exploit is unsupported.";
+               Duration = math.huge;
+               Button1 = "OK"
+           })
+           return
+       end
+
+       local RunService = game:GetService("RunService")
+       local Players = game:GetService("Players")
+       local Camera = game:GetService("Workspace").CurrentCamera
+       local UserInputService = game:GetService("UserInputService")
+
+       _G.SendNotifications = true
+       _G.DefaultSettings = false
+       _G.TeamCheck = false
+       _G.FromMouse = false
+       _G.FromCenter = true
+       _G.FromBottom = false
+       _G.TracersVisible = true
+       _G.TracerColor = Color3.fromRGB(255, 255, 255) -- Default color (White)
+       _G.TracerThickness = 1
+       _G.TracerTransparency = 0.7
+       _G.ModeSkipKey = Enum.KeyCode.E
+       _G.DisableKey = Enum.KeyCode.Q
+
+       -- Table to store all tracer lines
+       local TracerLines = {}
+
+       local function CreateTracers()
+           for _, v in next, Players:GetPlayers() do
+               if v.Name ~= game.Players.LocalPlayer.Name then
+                   local TracerLine = Drawing.new("Line")
+                   table.insert(TracerLines, TracerLine)
+
+                   RunService.RenderStepped:Connect(function()
+                       if workspace:FindFirstChild(v.Name) and workspace[v.Name]:FindFirstChild("HumanoidRootPart") then
+                           local HumanoidRootPart_Position = workspace[v.Name].HumanoidRootPart.CFrame.Position
+                           local Vector, OnScreen = Camera:WorldToViewportPoint(HumanoidRootPart_Position)
+
+                           -- Update tracer properties
+                           TracerLine.Thickness = _G.TracerThickness
+                           TracerLine.Transparency = _G.TracerTransparency
+                           TracerLine.Color = _G.TracerColor -- **Dynamic color update**
+
+                           if _G.FromMouse then
+                               TracerLine.From = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
+                           elseif _G.FromCenter then
+                               TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+                           elseif _G.FromBottom then
+                               TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y)
+                           end
+
+                           if OnScreen then
+                               TracerLine.To = Vector2.new(Vector.X, Vector.Y)
+                               if _G.TeamCheck then
+                                   if Players.LocalPlayer.Team ~= v.Team then
+                                       TracerLine.Visible = _G.TracersVisible and _G.TracersEnabled
+                                   else
+                                       TracerLine.Visible = false
+                                   end
+                               else
+                                   TracerLine.Visible = _G.TracersVisible and _G.TracersEnabled
+                               end
+                           else
+                               TracerLine.Visible = false
+                           end
+                       else
+                           TracerLine.Visible = false
+                       end
+                   end)
+
+                   Players.PlayerRemoving:Connect(function()
+                       TracerLine.Visible = false
+                   end)
+               end
+           end
+       end
+
+       local function ClearTracers()
+           for _, TracerLine in pairs(TracerLines) do
+               TracerLine:Remove()
+           end
+           TracerLines = {}
+       end
+
+       -- Toggle tracers on/off
+       if _G.TracersEnabled then
+           ClearTracers()
+           _G.TracersEnabled = false
+           if _G.SendNotifications then
+               game:GetService("StarterGui"):SetCore("SendNotification", {
+                   Title = "Meteorfighter";
+                   Text = "Tracers have been disabled.";
+                   Duration = 5;
+               })
+           end
+       else
+           _G.TracersEnabled = true
+           CreateTracers()
+           if _G.SendNotifications then
+               game:GetService("StarterGui"):SetCore("SendNotification", {
+                   Title = "Meteorfighter";
+                   Text = "Tracers have been enabled.";
+                   Duration = 5;
+               })
+           end
+       end	
 	end
 })
 
-Section:createTextBox({
-	text = "TextBox 1",
-	default = "hi",
-	callback = function(text)
-		print(text)
-	end,
-}) -- :getText(), :updateText({text = "bro"})
 
-
--- Addon example
-local Toggle = Section:createToggle({
-	text = "Toggle 2",
-	state = false,
-	callback = function(state)
-		print(state)
-	end
-})
-
--- Takes in same parameters/arguments as above
-Toggle:createPicker({})
-Toggle:createSlider({})
-Toggle:createDropdown({})
-Toggle:createToggle({})
-
--- Flags example
-print(shared.Flags.Toggle["Toggle 1"]:getState()) -- refers to the {text = "Toggle 1"} you set for the element
 
 -- Creates the theme changer, config manager, etc
 Library:createManager({
