@@ -204,9 +204,60 @@ Section:createButton({
 })
 
 Section:createButton({
-	text = "Button 1",
+	text = "Click Tp",
 	callback = function()
-		print("this is a button")
+		mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Click Teleport"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack	
+	end
+})
+
+Section:createButton({
+	text = "God Mode (some games work)",
+	callback = function()
+		loadstring(game:HttpGet("https://freenote.biz/raw/Fhpx5r5A8M"))()
+	end
+})
+
+Section:createButton({
+	text = "Force Shiftlock",
+	callback = function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/CjNsnSDy'))()
+	end
+})
+
+Section:createButton({
+	text = "R6 Fling",
+	callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+	end
+})
+
+Section:createButton({
+	text = "Mobile Keyboard",
+	callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()	
+	end
+})
+
+Section:createButton({
+	text = "Infinite Yield",
+	callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end
+})
+
+Section:createButton({
+	text = "Dark Dex Explorer",
+	callback = function()
+		loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
 	end
 })
 
