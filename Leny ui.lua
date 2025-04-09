@@ -1,8 +1,8 @@
 local Library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/L3nyFromV3rm/Leny-UI/refs/heads/main/Library.lua", true))()
 
 Library.new({
-	sizeX = 720,
-	sizeY = 550,
+	sizeX = 670,
+	sizeY = 500,
 	title = "Waterfall Hub",
 	tabWidth = 200, -- (72 for icons only)
 	PrimaryBackgroundColor = Color3.fromRGB(15, 18, 23),   -- Deep blue-gray for the main background
