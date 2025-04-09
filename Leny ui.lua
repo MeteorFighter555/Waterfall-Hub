@@ -4,7 +4,7 @@ Library.new({
 	sizeX = 770,
 	sizeY = 600,
 	title = "Waterfall Hub",
-	tabWidth = 100, -- (72 for icons only)
+	tabWidth = 200, -- (72 for icons only)
 	PrimaryBackgroundColor = Color3.fromRGB(15, 18, 23),   -- Deep blue-gray for the main background
     	SecondaryBackgroundColor = Color3.fromRGB(10, 12, 17), -- Darker background for secondary elements
     	TertiaryBackgroundColor = Color3.fromRGB(240, 248, 255), -- Light misty blue for lighter UI elements
