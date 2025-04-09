@@ -17,8 +17,8 @@ Library.new({
 })
 
 Library:notify({
-	title = "Notification",
-	text = "Hello world",
+	title = "Welcome to Waterfall Hub",
+	text = "This is Very WIP",
 	maxSizeX = 300,
 	scaleX = 0.165,
 	sizeY = 200,
