@@ -5,70 +5,15 @@ Library.new({
 	sizeY = 600,
 	title = "Waterfall Hub",
 	tabWidth = 200, -- (72 for icons only)
-	local function applyVerticalGradient(guiObject, startColor, endColor, numSteps)
-    guiObject.BackgroundTransparency = 1
-    local sizeX = guiObject.AbsoluteSize.X
-    local sizeY = guiObject.AbsoluteSize.Y
-
-    for i = 0, numSteps do
-        local ratio = i / numSteps
-        local r = startColor.R + (endColor.R - startColor.R) * ratio
-        local g = startColor.G + (endColor.G - startColor.G) * ratio
-        local b = startColor.B + (endColor.B - endColor.B) * ratio
-        local gradientFrame = Instance.new("Frame")
-        gradientFrame.Parent = guiObject
-        gradientFrame.BackgroundColor3 = Color3.new(r, g, b)
-        gradientFrame.BorderSizePixel = 0
-        gradientFrame.AnchorPoint = Vector2.new(0, 0)
-        gradientFrame.Position = UDim2.new(0, 0, i / numSteps, 0)
-        gradientFrame.Size = UDim2.new(1, 0, 1 / numSteps, 0)
-        gradientFrame.ZIndex = 0
-    end
-end
-
--- Define your gradient colors
-local gradientStartColor = Color3.fromRGB(20, 25, 30)
-local gradientEndColor = Color3.fromRGB(5, 7, 10)
-local numGradientSteps = 100
-
--- **For elements that were using PrimaryBackgroundColor:**
-local primaryBackgroundElements = -- **You need to write the code to get these elements**
--- For example, if it's a main frame named "MainWindow":
--- local primaryBackgroundElements = {workspace.ScreenGui.MainWindow}
-
-if primaryBackgroundElements then
-    for _, element in ipairs(primaryBackgroundElements) do
-        applyVerticalGradient(element, gradientStartColor, gradientEndColor, numGradientSteps)
-        -- Optionally, you might need to remove or comment out the line
-        -- that sets element.BackgroundColor3 = PrimaryBackgroundColor
-    end
-end
-
--- **For elements that were using SecondaryBackgroundColor:**
-local secondaryBackgroundElements = -- **You need to write the code to get these elements**
--- For example, if secondary backgrounds have a specific class name or are children of a certain frame:
--- local secondaryBackgroundElements = {}
--- for _, child in ipairs(workspace.ScreenGui.MainWindow:GetChildren()) do
---     if child:IsA("Frame") and child.Name == "SecondaryPanel" then
---         table.insert(secondaryBackgroundElements, child)
---     end
--- end
-
-if secondaryBackgroundElements then
-    for _, element in ipairs(secondaryBackgroundElements) do
-        applyVerticalGradient(element, gradientStartColor, gradientEndColor, numGradientSteps)
-        -- Optionally, remove or comment out the line
-        -- that sets element.BackgroundColor3 = SecondaryBackgroundColor
-    end
-end
-	TertiaryBackgroundColor = Color3.fromRGB(240, 248, 255),  -- Light misty blue for lighter UI elements
-	TabBackgroundColor = Color3.fromRGB(50, 60, 80),  -- Medium dark blue for tabs
-	PrimaryTextColor = Color3.fromRGB(255, 255, 255),  -- White text for readability
-	SecondaryTextColor = Color3.fromRGB(180, 210, 230),  -- Soft light blue for secondary text
-	PrimaryColor = Color3.fromRGB(90, 160, 255),  -- Vibrant blue for primary accents and buttons
-	ScrollingBarImageColor = Color3.fromRGB(135, 170, 195),  -- Muted blue-gray for scrollbar
-	Line = Color3.fromRGB(35, 40, 50),  -- Dark blue-gray for dividing lines
-
+	PrimaryBackgroundColor = Color3.fromRGB(15, 18, 23),   -- Deep blue-gray for the main background
+    	SecondaryBackgroundColor = Color3.fromRGB(10, 12, 17), -- Darker background for secondary elements
+    	TertiaryBackgroundColor = Color3.fromRGB(240, 248, 255), -- Light misty blue for lighter UI elements
+    	TabBackgroundColor = Color3.fromRGB(50, 60, 80),     -- Medium dark blue for tabs
+    	PrimaryTextColor = Color3.fromRGB(255, 255, 255),     -- White text for readability
+    	SecondaryTextColor = Color3.fromRGB(180, 210, 230),   -- Soft light blue for secondary text
+    	PrimaryColor = Color3.fromRGB(90, 160, 255),       -- Vibrant blue for primary accents and buttons
+    	ScrollingBarImageColor = Color3.fromRGB(135, 170, 195), -- Muted blue-gray for scrollbar
+    	Line = Color3.fromRGB(35, 40, 50),
 })
 
 Library:notify({
