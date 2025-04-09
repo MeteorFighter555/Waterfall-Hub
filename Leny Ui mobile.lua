@@ -260,6 +260,11 @@ Section:createButton({
 	end
 })
 
+local Section = Page1:createSection({
+	text = "Section",
+	position = "Right",
+})
+
 -- Creates the theme changer, config manager, etc
 Library:createManager({
 	folderName = "brah",
