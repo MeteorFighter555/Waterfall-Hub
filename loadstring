@@ -6,6 +6,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Wate
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Leny%20ui.lua",true))()
 
+--Leny Ui Mobile
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Leny%20ui%20mobile.lua",true))()
+
 --rayfield
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MeteorFighter555/Waterfall-Hub/main/Rayfield.lua",true))()
