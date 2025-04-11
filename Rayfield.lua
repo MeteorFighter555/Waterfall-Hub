@@ -426,6 +426,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifv
 })
 
 local Button = UniTab:CreateButton({
+   Name = "Vape v4 Roblox",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = UniTab:CreateButton({
    Name = "Infinite Yield",
    Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
