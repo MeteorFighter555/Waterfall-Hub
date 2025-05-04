@@ -585,14 +585,6 @@ loadstring(game:HttpGetAsync("https://pastebin.com/raw/uacVtsWe"))()
 })
 
 local Button = UniTab:CreateButton({
-   Name = "Place Holder",
-   Callback = function()
-			
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = UniTab:CreateButton({
    Name = "Seraphic Sword (FE)",
    Callback = function()
 	loadstring(game:HttpGet("https://pastefy.app/59mJGQGe/raw"))() --Anim		
