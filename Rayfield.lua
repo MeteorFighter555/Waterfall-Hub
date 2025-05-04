@@ -773,3 +773,20 @@ local Button = TsbTab:CreateButton({
    -- The function that takes place when the button is pressed
    end,
 })
+
+local Bloxtab = Window:CreateTab("Blox fruits", 4483362458) -- Title, Image
+
+local Label = Bloxtab:CreateLabel("Blox fruits scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+
+local Button = TsbTab:CreateButton({
+   Name = "Redz Hub",
+   Callback = function()
+          local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = false; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))(Settings)
+   -- The function that takes place when the button is pressed
+   end,
+})
