@@ -783,7 +783,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/re
    end,
 })
 
-local RailTab = Window:CreateTab("Dead Rails", 4483362458) -- Title, Image
+local RailsTab = Window:CreateTab("Dead Rails", 4483362458) -- Title, Image
 
 local Label = RailsTab:CreateLabel("Dead Rails scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
