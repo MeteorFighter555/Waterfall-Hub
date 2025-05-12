@@ -783,14 +783,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/re
    end,
 })
 
-local RailsTab = Window:CreateTab("Dead Rails", 4483362458) -- Title, Image
+local RailTab = Window:CreateTab("Dead Rails", 4483362458) -- Title, Image
 
-local Label = RailsTab:CreateLabel("Dead Rails scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = RailTab:CreateLabel("Dead Rails scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
-local Button = RailsTab:CreateButton({
-   Name = "Moondeity Auto Bonds",
+local Button = RailTab:CreateButton({
+   Name = "Moondeity Bonds",
    Callback = function()
-          loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34b20c9e914c2615f025a8cb6f434cb7.lua"))()
-   -- The function that takes place when the button is pressed
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34b20c9e914c2615f025a8cb6f434cb7.lua"))()		
+        -- The function that takes place when the button is pressed
    end,
 })
