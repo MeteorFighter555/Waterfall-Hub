@@ -770,13 +770,13 @@ local Bloxtab = Window:CreateTab("Blox fruits", 4483362458) -- Title, Image
 
 local Label = Bloxtab:CreateLabel("Blox fruits scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
-local Button = BloxTab:CreateButton({
+local Button = Bloxtab:CreateButton({
    Name = "Redz Hub",
    Callback = function()
           local Settings = {
   JoinTeam = "Pirates"; -- Pirates/Marines
   Translator = false; -- true/false
-}
+                           }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))(Settings)
    -- The function that takes place when the button is pressed
@@ -787,7 +787,7 @@ local Railstab = Window:CreateTab("Dead Rails", 4483362458) -- Title, Image
 
 local Label = Railstab:CreateLabel("Dead Rails scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
-local Button = RailsTab:CreateButton({
+local Button = Railstab:CreateButton({
    Name = "Moondeity Auto Bonds",
    Callback = function()
           loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34b20c9e914c2615f025a8cb6f434cb7.lua"))()
