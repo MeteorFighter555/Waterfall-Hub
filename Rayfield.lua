@@ -766,11 +766,11 @@ local Button = TsbTab:CreateButton({
    end,
 })
 
-local Bloxtab = Window:CreateTab("Blox fruits", 4483362458) -- Title, Image
+local BloxTab = Window:CreateTab("Blox fruits", 4483362458) -- Title, Image
 
-local Label = Bloxtab:CreateLabel("Blox fruits scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = BloxTab:CreateLabel("Blox fruits scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
-local Button = Bloxtab:CreateButton({
+local Button = BloxTab:CreateButton({
    Name = "Redz Hub",
    Callback = function()
           local Settings = {
@@ -783,11 +783,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/re
    end,
 })
 
-local Railstab = Window:CreateTab("Dead Rails", 4483362458) -- Title, Image
+local RailTab = Window:CreateTab("Dead Rails", 4483362458) -- Title, Image
 
-local Label = Railstab:CreateLabel("Dead Rails scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = RailsTab:CreateLabel("Dead Rails scripts", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
-local Button = Railstab:CreateButton({
+local Button = RailsTab:CreateButton({
    Name = "Moondeity Auto Bonds",
    Callback = function()
           loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34b20c9e914c2615f025a8cb6f434cb7.lua"))()
